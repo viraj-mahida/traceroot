@@ -203,3 +203,5 @@ cython_debug/
 set_env
 
 traceroot.db
+
+.DS_Store

@@ -1,4 +1,10 @@
 <div align="center">
+  <a href="https://traceroot.ai/">
+    <img src="misc/images/banner.svg" alt="Banner" width="80%">
+  </a>
+</div>
+
+<div align="center">
 
 [![Documentation][docs-image]][docs-url]
 [![Discord][discord-image]][discord-url]
@@ -99,20 +105,52 @@ pip install .
 pip install -e .
 ```
 
-## SDK
+## Local Usage
 
-Our platform is built on top of the TraceRoot SDK. You need to use our SDK to integrate with your applications at first by
+You can use the TraceRoot framework locally by following the [README.md in the `ui` directory](ui/README.md) and [README.md in the `rest` directory](rest/README.md).
+
+Also, you can build the docker image and run the docker container by following the [README.md in the `docker` directory](docker/public/README.md).
+
+Or even simpler, just pull the docker image by
 
 ```bash
-pip install traceroot
+docker pull zechengzh/traceroot-public:v0.0.1
+docker run -d --name traceroot-public -p 3000:3000 -p 8000:8000 zechengzh/traceroot-public:v0.0.1
 ```
 
-For more details please checkout this [Quickstart](https://docs.traceroot.ai/quickstart).
+Before using the TraceRoot framework, you need to setup the Jaeger docker container at first. It will be used to store the traces and logs and capture the traces and logs from our SDK integrated with your applications.
 
-## Run the Servers
+```bash
+docker run -d --name jaeger \
+  -e COLLECTOR_OTLP_ENABLED=true \
+  -p 16686:16686 \
+  -p 14268:14268 \
+  -p 14250:14250 \
+  -p 4317:4317 \
+  -p 4318:4318 \
+  cr.jaegertracing.io/jaegertracing/jaeger:2.8.0
+```
 
-1. Check the [README.md in the `rest` directory](rest/README.md) to run the rest server.
-2. Check the [README.md in the `ui` directory](ui/README.md) to run the ui server.
+## SDK
+
+Our platform is built on top of the TraceRoot SDK. You need to use our SDK to integrate with your applications by
+
+```bash
+pip install traceroot==0.0.4a5
+```
+
+To use the local mode of the TraceRoot SDK, you need create a `.traceroot.yaml` file in the root directory of your project with following content:
+```yaml
+local_mode: true
+service_name: "your-service-name"
+github_owner: "your-github-owner"
+github_repo_name: "your-github-repo-name"
+github_commit_hash: "your-github-commit-hash"
+```
+
+As mentioned above, you need to setup the Jaeger docker container at first before let the TraceRoot SDK capture the traces and logs from your applications.
+
+For more details or the SDK usage and examples, please checkout this [Quickstart](https://docs.traceroot.ai/quickstart).
 
 [docs-image]: https://img.shields.io/badge/Documentation-0dbf43
 [docs-url]: https://docs.traceroot.ai
