@@ -1,0 +1,96 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "traceroot-framework"
+version = "0.0.1"
+description = "TraceRoot - Comprehensive AI-powered tracing, monitoring and REST API solution"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Zecheng Zhang"},
+    {name = "Xinwei He"},
+]
+keywords = [
+    "opentelemetry",
+    "agents",
+    "dev",
+    "del-tools",
+    "artificial-intelligence",
+    "tracing",
+    "logging",
+    "debugging",
+    "rest-api",
+    "multi-agent-systems",
+    "coding",
+    "debugging-assistant",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Logging",
+    "Topic :: System :: Monitoring",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+]
+dependencies = [
+    "fastapi>=0.115.12",
+    "uvicorn>=0.34.3",
+    "pytest>=8.4.0",
+    "httpx>=0.25.0",
+    "pyjwt>=2.10.1",
+    "cryptography>=44.0.0",
+    "python-jose[cryptography]>=3.3.0",
+    "python-multipart>=0.0.19",
+    "requests>=2.32.3",
+    "openai>=1.88.0",
+    "pymongo>=4.13.2",
+    "boto3>=1.38.41",
+    "numpy>=2.3.1",
+    "asgiref>=3.8.1",
+    "slowapi>=0.1.9",
+    "aiocache>=0.12.3",
+    "PyGithub>=2.6.1",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "pydantic-settings>=2.0.0",
+    "dotenv==0.9.9",
+    "traceroot==0.0.4a5",
+    "aiosqlite==0.21.0",
+    "stripe>=11.0.0",
+    "docstring_parser==0.17.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest-asyncio>=0.21.0",
+    "black",
+    "flake8",
+    "ruff",
+    "mypy",
+    "pre-commit>=4.2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/traceroot-ai/traceroot"
+Documentation = "https://github.com/traceroot-ai/traceroot#readme"
+Repository = "https://github.com/traceroot-ai/traceroot"
+"Bug Reports" = "https://github.com/traceroot-ai/traceroot/issues"
+
+[project.scripts]
+traceroot-api = "rest.main:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["rest*", "traceroot*", "test*", "ui*", "experiments*", "infra*"]
