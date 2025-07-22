@@ -118,6 +118,8 @@ docker pull zechengzh/traceroot-public:v0.0.1
 docker run -d --name traceroot-public -p 3000:3000 -p 8000:8000 zechengzh/traceroot-public:v0.0.1
 ```
 
+This will start the UI at [http://localhost:3000](http://localhost:3000) and the API at [http://localhost:8000](http://localhost:8000).
+
 Before using the TraceRoot framework, you need to setup the Jaeger docker container at first. It will be used to store the traces and logs and capture the traces and logs from our SDK integrated with your applications.
 
 ```bash
