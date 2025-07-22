@@ -1,9 +1,5 @@
 FROM ubuntu:24.04
 
-# Set build argument for GitHub token
-ARG GITHUB_TOKEN
-ENV GITHUB_TOKEN=${GITHUB_TOKEN}
-
 # Set local build to true if using local github repo to build the image
 ARG LOCAL_BUILD=false
 ENV LOCAL_BUILD=${LOCAL_BUILD}
@@ -51,19 +47,19 @@ WORKDIR /app
 ARG CACHEBUST=1
 
 # Copy local files (will be used if LOCAL_BUILD is true)
-COPY . /app/traceroot-internal
+COPY . /app/traceroot
 
-# Clone repositories using GitHub token if not local build (this will replace the copied files)
+# Clone repositories if not local build (this will replace the copied files)
 RUN if [ "$LOCAL_BUILD" = "false" ]; then \
-        rm -rf /app/traceroot-internal && \
-        git clone https://oauth2:${GITHUB_TOKEN}@github.com/traceroot-ai/traceroot-internal.git; \
+        rm -rf /app/traceroot && \
+        git clone https://github.com/traceroot-ai/traceroot.git; \
     fi
 
-# Change to traceroot-internal directory
-WORKDIR /app/traceroot-internal
+# Change to traceroot directory
+WORKDIR /app/traceroot
 
 # Remove all ee folders recursively
-RUN find /app/traceroot-internal -type d -name "ee" -exec rm -rf {} +
+RUN find /app/traceroot -type d -name "ee" -exec rm -rf {} +
 
 # Remove existing venv directory if it exists (from local copy)
 RUN rm -rf venv
@@ -77,11 +73,11 @@ RUN /bin/bash -c "source venv/bin/activate && \
     pip install ."
 
 # Change to ui directory and install npm dependencies
-WORKDIR /app/traceroot-internal/ui
+WORKDIR /app/traceroot/ui
 RUN npm install
 
-# Set final working directory back to traceroot-internal
-WORKDIR /app/traceroot-internal
+# Set final working directory back to traceroot
+WORKDIR /app/traceroot
 
 # Required environment variables
 ENV DB_NAME=traceroot
@@ -110,6 +106,7 @@ ENV NEXT_PUBLIC_APP_URL="http://localhost:3000"
 ENV REST_API_ENDPOINT="http://localhost:8000"
 ENV NEXT_PUBLIC_REST_API_ENDPOINT="http://localhost:8000"
 ENV JAEGER_URL="http://host.docker.internal:16686"
+ENV NEXT_PUBLIC_STRIPE_MODE="disabled"
 
 # Set local mode to true
 ENV TRACE_ROOT_LOCAL_MODE=true
@@ -127,14 +124,14 @@ echo "Starting TraceRoot services..."
 
 # Start Next.js frontend in background
 echo "Building and starting Next.js frontend on port 3000..."
-cd /app/traceroot-internal/ui
+cd /app/traceroot/ui
 rm -rf .next
 npm run build
 PORT=3000 npm start &
 
 # Start FastAPI backend
 echo "Starting FastAPI backend with uvicorn..."
-cd /app/traceroot-internal
+cd /app/traceroot
 source venv/bin/activate
 uvicorn rest.main:app --host 0.0.0.0 --port 8000 &
 
