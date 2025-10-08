@@ -198,10 +198,6 @@ next, react, @clerk/nextjs, ai (Vercel AI SDK), recharts
 4. **Agent**: Dive into `rest/agent/README.md` and `rest/agent/agent.py`
 5. **Frontend**: Check `ui/src/app/explore/page.tsx`
 
-```python
-# Backend (pyproject.toml)
-fastapi, uvicorn, openai, pymongo, boto3, PyGithub, stripe
+---
 
-# Frontend (ui/package.json)  
-next, react, @clerk/nextjs, ai (Vercel AI SDK), recharts
-```
+This is a sophisticated observability platform with cutting-edge AI integration. The codebase is well-structured with clear separation between API, agent framework, and UI. The AI agent's context engineering approach (heterogeneous trees + LLM filtering) is the key innovation that makes debugging more efficient.
