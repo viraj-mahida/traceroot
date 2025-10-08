@@ -198,59 +198,6 @@ next, react, @clerk/nextjs, ai (Vercel AI SDK), recharts
 4. **Agent**: Dive into `rest/agent/README.md` and `rest/agent/agent.py`
 5. **Frontend**: Check `ui/src/app/explore/page.tsx`
 
----
-
-This is a sophisticated observability platform with cutting-edge AI integration. The codebase is well-structured with clear separation between API, agent framework, and UI. The AI agent's context engineering approach (heterogeneous trees + LLM filtering) is the key innovation that makes debugging more efficient.
-
-Would you like me to explain any specific component in more detail?
-
-```plaintext
-traceroot/
-├── rest/                      # Backend API (Python/FastAPI)
-│   ├── main.py               # API entry point
-│   ├── app.py                # FastAPI app configuration
-│   ├── agent/                # 🤖 AI Agent Framework
-│   │   ├── agent.py          # Core agent logic
-│   │   ├── chat.py           # Chat interface
-│   │   ├── context/          # Context engineering (tree construction)
-│   │   ├── filter/           # LLM-based feature/structure filtering
-│   │   ├── summarizer/       # Output summarization
-│   │   ├── tools/            # GitHub issue/PR creation tools
-│   │   └── prompts/          # AI prompts
-│   ├── routers/              # API endpoints
-│   │   ├── explore.py        # Main trace exploration & chat API
-│   │   ├── integrate.py      # Integration management (GitHub, etc.)
-│   │   ├── auth/             # Authentication
-│   │   └── verify.py         # SDK verification
-│   ├── service/              # External service clients
-│   │   ├── aws_client.py     # AWS X-Ray integration
-│   │   ├── jaeger_client.py  # Jaeger tracing backend
-│   │   └── tencent_client.py # Tencent Cloud integration
-│   ├── dao/                  # Data Access Objects
-│   │   ├── mongodb_dao.py    # MongoDB for chat/metadata
-│   │   └── sqlite_dao.py     # SQLite for local storage
-│   └── config/               # Configuration models (Pydantic)
-│
-├── ui/                       # Frontend (Next.js)
-│   ├── src/
-│   │   ├── app/              # Next.js app router
-│   │   │   ├── explore/      # Trace exploration page
-│   │   │   ├── integrate/    # Integration settings
-│   │   │   ├── settings/     # User settings
-│   │   │   └── api/          # API routes (proxy to backend)
-│   │   ├── components/       # React components (85 files!)
-│   │   └── models/           # TypeScript data models
-│
-├── examples/                 # Usage examples
-│   ├── python/               # Python SDK examples
-│   ├── typescript/           # TypeScript SDK examples
-│   └── distributed_services/ # Multi-agent demo app
-│
-├── docs/                     # Documentation
-├── docker/                   # Docker deployment configs
-└── test/                     # Unit tests
-```
-
 ```python
 # Backend (pyproject.toml)
 fastapi, uvicorn, openai, pymongo, boto3, PyGithub, stripe
@@ -258,4 +205,3 @@ fastapi, uvicorn, openai, pymongo, boto3, PyGithub, stripe
 # Frontend (ui/package.json)  
 next, react, @clerk/nextjs, ai (Vercel AI SDK), recharts
 ```
-
