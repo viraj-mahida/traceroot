@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { useUser } from "../../hooks/useUser";
-import { useCustomer } from "autumn-js/react";
+import { useUser } from "@clerk/nextjs";
+import { useAuth } from "@clerk/nextjs";
 import { toast } from "react-hot-toast";
+import { useStableCustomer } from "@/hooks/useStableCustomer";
 import { SettingsSidebar } from "./SettingsSidebar";
 import { AccessLostWarning } from "./AccessLostWarning";
 import { TokenUsageCard, LocalTokenUsageCard } from "./TokenUsageCard";
@@ -23,30 +24,50 @@ export function SettingsContainer() {
   const isLocalMode = process.env.NEXT_PUBLIC_DISABLE_PAYMENT === "true";
 
   const router = useRouter();
-  const {
-    user,
-    isLoading: userLoading,
-    getAuthState,
-  } = isLocalMode
-    ? { user: null, isLoading: false, getAuthState: () => null }
-    : useUser();
-  const {
-    customer,
-    isLoading: customerLoading,
-    error: customerError,
-    openBillingPortal,
-  } = isLocalMode
+
+  // Always call hooks to maintain consistent hook order
+  const { user: clerkUser, isLoaded: clerkLoaded } = useUser();
+  const { getToken } = useAuth();
+
+  // Map Clerk user to legacy user format
+  const rawUser = clerkUser
     ? {
-        customer: null,
-        isLoading: false,
-        error: null,
-        openBillingPortal: async () => {},
+        email: clerkUser.emailAddresses?.[0]?.emailAddress,
+        user_id: clerkUser.id,
       }
-    : useCustomer();
+    : null;
+  const rawUserLoading = !clerkLoaded;
+  const rawGetAuthState = async () => await getToken();
+
+  const {
+    customer: rawCustomer,
+    isLoading: rawCustomerLoading,
+    error: rawCustomerError,
+    openBillingPortal: rawOpenBillingPortal,
+  } = useStableCustomer();
+
+  // Track if we've loaded customer data at least once
+  const hasLoadedOnce = useRef(false);
+
+  useEffect(() => {
+    if (rawCustomer && !hasLoadedOnce.current) {
+      hasLoadedOnce.current = true;
+    }
+  }, [rawCustomer]);
+
+  // Override values when payment is disabled
+  const user = isLocalMode ? null : rawUser;
+  const userLoading = isLocalMode ? false : rawUserLoading;
+  const getAuthState = isLocalMode ? () => null : rawGetAuthState;
+  const customer = isLocalMode ? null : rawCustomer;
+  // Only show loading on initial load, not on background refreshes
+  const customerLoading = isLocalMode
+    ? false
+    : rawCustomerLoading && !hasLoadedOnce.current;
+  const customerError = isLocalMode ? null : rawCustomerError;
+  const openBillingPortal = isLocalMode ? async () => {} : rawOpenBillingPortal;
 
   const [isProcessing, setIsProcessing] = useState(false);
-  const [tracesAndLogsData, setTracesAndLogsData] = useState<any>(null);
-  const [isLoadingTracesAndLogs, setIsLoadingTracesAndLogs] = useState(true);
   const [activeTab, setActiveTab] = useState<
     "usage" | "plan" | "trace-provider" | "log-provider"
   >("trace-provider");
@@ -80,15 +101,7 @@ export function SettingsContainer() {
   };
 
   function getTracesAndLogsInfo() {
-    if (isLoadingTracesAndLogs) {
-      return {
-        limit: 0,
-        usage: 0,
-        remaining: 0,
-        percentage: 0,
-        isLoading: true,
-      };
-    }
+    // Directly read from Autumn customer data - no backend fetch needed
     const tracesAndLogsFeature = customer?.features?.trace__log;
     if (!tracesAndLogsFeature) {
       return null;
@@ -99,71 +112,6 @@ export function SettingsContainer() {
     const percentage = limit > 0 ? Math.min(100, (usage / limit) * 100) : 0;
     return { limit, usage, remaining, percentage, isLoading: false };
   }
-
-  const fetchTracesAndLogsUsage = async () => {
-    try {
-      setIsLoadingTracesAndLogs(true);
-      const authState = getAuthState();
-
-      if (!authState || !customer?.products) {
-        setIsLoadingTracesAndLogs(false);
-        return;
-      }
-
-      // Get the last payment date from customer subscription
-      const activeProduct = customer.products.find(
-        (product) =>
-          product.status === "active" || product.status === "trialing",
-      );
-      if (!activeProduct) {
-        setIsLoadingTracesAndLogs(false);
-        return;
-      }
-
-      const sinceDate = activeProduct.current_period_start
-        ? new Date(activeProduct.current_period_start).toISOString()
-        : new Date().toISOString(); // Fallback to current date
-
-      // Use GET with query parameters
-      const url = new URL(
-        "/api/get_traces_and_logs_usage",
-        window.location.origin,
-      );
-      console.log("sinceDate", sinceDate);
-      url.searchParams.set("since_date", sinceDate);
-
-      const response = await fetch(url.toString(), {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${authState}`,
-        },
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        setTracesAndLogsData(data.traces_and_logs);
-
-        if (customer?.features?.trace__log && data.traces_and_logs) {
-          // update in-memory usage for display
-          customer.features.trace__log.usage = data.traces_and_logs.trace__log;
-        }
-      }
-    } catch (error) {
-      console.error("Error fetching traces and logs usage:", error);
-    } finally {
-      setIsLoadingTracesAndLogs(false);
-    }
-  };
-
-  // TODO (xinwei): properly fix this please, right now it is reloading
-  // whenever we go to another page and back which is not ideal
-  // useEffect to fetch data when customer is loaded
-  useEffect(() => {
-    if (customer && !isLoading) {
-      fetchTracesAndLogsUsage();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [customer, isLoading]);
 
   // Format numbers with commas for better readability
   const formatNumber = (num: number) => {
@@ -176,7 +124,6 @@ export function SettingsContainer() {
   };
 
   const getCurrentPlan = () => {
-    console.log("customer", customer);
     if (!customer?.products || customer.products.length === 0) {
       return "Free";
     }
@@ -216,12 +163,6 @@ export function SettingsContainer() {
       (product) => product.status === "trialing",
     );
 
-    // Debug: log the trial product to see available fields
-    if (trialProduct) {
-      console.log("Trial product:", trialProduct);
-      console.log("Trial product keys:", Object.keys(trialProduct));
-    }
-
     // Check multiple possible field names for trial end date
     return (
       trialProduct?.trial_ends_at || trialProduct?.current_period_end || null
@@ -252,7 +193,6 @@ export function SettingsContainer() {
       toast.dismiss("billing-redirect");
       toast.success("Redirecting to billing portal...");
     } catch (error) {
-      console.error("Error opening billing portal:", error);
       toast.dismiss("billing-redirect");
 
       // More specific error messages

@@ -1,23 +1,21 @@
 "use client";
 
-import { useCustomer } from "autumn-js/react";
+import { useStableCustomer } from "./useStableCustomer";
 
 const DISABLE_PAYMENT = process.env.NEXT_PUBLIC_DISABLE_PAYMENT === "true";
 
 export function useSubscription() {
-  // Only use useCustomer hook when payment is not disabled
-  const customerData = DISABLE_PAYMENT
-    ? { customer: null, isLoading: false, error: null }
-    : useCustomer();
+  // Always call useStableCustomer to maintain consistent hook order
+  // Override the values when payment is disabled
+  const {
+    customer: rawCustomer,
+    isLoading: rawIsLoading,
+    error: rawError,
+  } = useStableCustomer();
 
-  const { customer, isLoading, error } = customerData;
-
-  // Log payment status for debugging
-  if (DISABLE_PAYMENT) {
-    console.log("Payment is disabled.");
-  } else {
-    console.log("Payment is enabled.");
-  }
+  const customer = DISABLE_PAYMENT ? null : rawCustomer;
+  const isLoading = DISABLE_PAYMENT ? false : rawIsLoading;
+  const error = DISABLE_PAYMENT ? null : rawError;
 
   const hasActiveSubscription = () => {
     // If payment is disabled, always return true to allow access
@@ -31,7 +29,8 @@ export function useSubscription() {
     }
 
     return customer.products.some(
-      (product) => product.status === "active" || product.status === "trialing",
+      (product: { status: string }) =>
+        product.status === "active" || product.status === "trialing",
     );
   };
 
@@ -47,7 +46,8 @@ export function useSubscription() {
 
     // Find the currently active product (including trialing status)
     const activeProduct = customer.products.find(
-      (product) => product.status === "active" || product.status === "trialing",
+      (product: { status: string; name: string | null }) =>
+        product.status === "active" || product.status === "trialing",
     );
 
     return activeProduct?.name || "Free";
@@ -63,7 +63,9 @@ export function useSubscription() {
       return false;
     }
 
-    return customer.products.some((product) => product.status === "trialing");
+    return customer.products.some(
+      (product: { status: string }) => product.status === "trialing",
+    );
   };
 
   return {
