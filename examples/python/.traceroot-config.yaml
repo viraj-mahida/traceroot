@@ -1,0 +1,19 @@
+# TraceRoot Configuration for Semantic Chunking Test
+# This config uses local mode with Jaeger for testing
+
+service_name: semantic-chunking-test
+github_owner: viraj-mahida
+github_repo_name: traceroot-test
+github_commit_hash: main
+environment: development
+local_mode: true
+
+# Enable exports
+enable_span_cloud_export: true
+enable_log_cloud_export: true
+enable_span_console_export: false
+enable_log_console_export: true
+
+# Jaeger OTLP endpoint (make sure Jaeger is running)
+otlp_endpoint: http://localhost:4318/v1/traces
+

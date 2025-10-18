@@ -202,3 +202,6 @@ set_env
 traceroot.db
 
 .DS_Store
+
+# Semantic chunking logs
+rest/logs/semantic_chunking/

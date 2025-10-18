@@ -6,14 +6,14 @@ from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 from slowapi.util import get_remote_address
 
-from rest.routers.auth import router as auth_router
 from rest.routers.explore import ExploreRouter
-from rest.routers.integrate import IntegrateRouter
 
 try:
     from rest.routers.ee.verify import VerifyRouter
 except ImportError:
     from rest.routers.verify import VerifyRouter
+
+from rest.routers.internal import InternalRouter
 
 version = "0.1.3"
 
@@ -45,14 +45,6 @@ class App:
             tags=["explore"],
         )
 
-        # Add connect router
-        self.integrate_router = IntegrateRouter(self.limiter)
-        self.app.include_router(
-            self.integrate_router.router,
-            prefix="/v1/integrate",
-            tags=["integrate"],
-        )
-
         # Add verify router for SDK verification
         self.verify_router = VerifyRouter(self.limiter)
         self.app.include_router(
@@ -61,20 +53,21 @@ class App:
             tags=["verify"],
         )
 
-        # Add auth router
+        # Add internal router for OTLP usage tracking
+        self.internal_router = InternalRouter()
         self.app.include_router(
-            auth_router,
-            prefix="/v1/auth",
-            tags=["auth"],
+            self.internal_router.router,
+            prefix="/v1/internal",
+            tags=["internal"],
         )
 
     def add_middleware(self):
+        main_domain = os.getenv("MAIN_DOMAIN")
         allow_origins = [
-            "https://test.traceroot.ai",  # MVP
-            "https://api.test.traceroot.ai",  # API subdomain
+            f"https://{main_domain}",
+            f"https://api.{main_domain}",
             "http://localhost:3000",
             "http://localhost:3001",
-            # Add explicit protocol+port combinations
             "http://127.0.0.1:3000",
             "http://127.0.0.1:3001",
         ]

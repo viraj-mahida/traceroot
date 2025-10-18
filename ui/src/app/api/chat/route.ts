@@ -7,14 +7,12 @@ import {
   ChatbotResponse,
   MessageType,
 } from "@/models/chat";
+import { createBackendAuthHeaders } from "@/lib/server-auth-headers";
 
 export async function POST(
   request: Request,
 ): Promise<NextResponse<ChatResponse>> {
   try {
-    // Get user_secret from middleware-processed header
-    const userSecret = request.headers.get("x-user-token") || "";
-
     const body: ChatRequest = await request.json();
     const {
       time,
@@ -52,20 +50,19 @@ export async function POST(
           model,
           mode,
           chat_id,
-          trace_provider,
-          log_provider,
+          trace_provider: "jaeger",
+          log_provider: "jaeger",
           service_name: null,
           trace_region,
           log_region,
           provider,
         };
 
+        // Get auth headers (automatically uses Clerk's auth() and currentUser())
+        const headers = await createBackendAuthHeaders();
         const apiResponse = await fetch(apiUrl, {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${userSecret}`,
-          },
+          headers,
           body: JSON.stringify(apiRequestBody),
         });
 

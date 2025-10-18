@@ -48,12 +48,10 @@ import {
   writeProvidersToURL,
   readProvidersFromURL,
 } from "@/utils/provider";
-import { useUser } from "@/hooks/useUser";
 
 type TraceProvider = "aws" | "tencent" | "jaeger";
 
 export function TraceProviderTabContent() {
-  const { getAuthState } = useUser();
   const [selectedProvider, setSelectedProvider] =
     useState<TraceProvider>("aws");
   const isUpdatingRef = useRef(false);
@@ -154,14 +152,8 @@ export function TraceProviderTabContent() {
         };
 
         // Try to fetch from API - server will tell us if MongoDB is available
-        const authToken = getAuthState();
         const response = await fetch(
           `/api/provider-config?userEmail=${encodeURIComponent(userEmail)}`,
-          {
-            headers: {
-              Authorization: `Bearer ${authToken}`,
-            },
-          },
         );
         const data = await response.json();
 
@@ -528,12 +520,10 @@ export function TraceProviderTabContent() {
         ...configData,
       };
 
-      const authToken = getAuthState();
       const response = await fetch("/api/provider-config", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${authToken}`,
         },
         body: JSON.stringify(payload),
       });
@@ -608,16 +598,12 @@ export function TraceProviderTabContent() {
       }
 
       // Delete from MongoDB
-      const authToken = getAuthState();
       const response = await fetch(
         `/api/provider-config?userEmail=${encodeURIComponent(
           userEmail,
         )}&providerType=trace`,
         {
           method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${authToken}`,
-          },
         },
       );
 

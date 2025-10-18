@@ -3,6 +3,7 @@ import os
 from datetime import datetime, timezone
 
 from openai import AsyncOpenAI
+from rest.agent.chunk.semantic import semantic_chunk
 
 try:
     from rest.dao.ee.mongodb_dao import TraceRootMongoDBClient
@@ -467,9 +468,51 @@ class Agent:
 
     def get_context_messages(self, context: str) -> list[str]:
         r"""Get the context message."""
+        import os
+        from datetime import datetime
+        
         # TODO: Make this more efficient.
-        context_chunks = list(sequential_chunk(context))
-        if len(context_chunks) == 1:
+        # Create logs directory if it doesn't exist
+        log_dir = os.path.join(os.path.dirname(__file__), "..", "..", "logs", "semantic_chunking")
+        os.makedirs(log_dir, exist_ok=True)
+        
+        # Create log file with timestamp
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+        log_file = os.path.join(log_dir, f"agent_chunking_{timestamp}.log")
+        
+        with open(log_file, 'w', encoding='utf-8') as f:
+            f.write("\n" + "="*80 + "\n")
+            f.write("WHOLE CONTEXT (before chunking):\n")
+            f.write("="*80 + "\n")
+            f.write(context)
+            f.write("\n" + "="*80 + "\n")
+            f.write(f"Context size: {len(context)} characters\n")
+            f.write("="*80 + "\n\n")
+            
+            context_chunks = list(semantic_chunk(context))
+            
+            f.write("\n" + "="*80 + "\n")
+            f.write(f"SEMANTIC CHUNKS (total: {len(context_chunks)}):\n")
+            f.write("="*80 + "\n")
+            for i, chunk in enumerate(context_chunks):
+                f.write(f"\n--- Chunk {i+1} of {len(context_chunks)} ---\n")
+                f.write(f"Chunk size: {len(chunk)} characters\n")
+                f.write("-" * 40 + "\n")
+                f.write(chunk)
+                f.write("\n" + "-" * 40 + "\n")
+            f.write("="*80 + "\n")
+        
+        # Store context_chunks before the file context manager closes
+        chunks = context_chunks
+        
+        print(f"\n✅ Semantic chunking log saved to: {log_file}")
+        print(f"   Context size: {len(context)} characters")
+        print(f"   Total chunks: {len(chunks)}")
+        for i, chunk in enumerate(chunks):
+            print(f"   Chunk {i+1}: {len(chunk)} characters")
+        print()
+        
+        if len(chunks) == 1:
             return [
                 (
                     f"\n\nHere is the structure of the tree with related "
@@ -478,7 +521,7 @@ class Agent:
                 )
             ]
         messages: list[str] = []
-        for i, chunk in enumerate(context_chunks):
+        for i, chunk in enumerate(chunks):
             messages.append(
                 f"\n\nHere is the structure of the tree "
                 f"with related information of the "

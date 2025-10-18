@@ -1,0 +1,1030 @@
+
+================================================================================
+TEST: Tiny Span (< 100 chars)
+================================================================================
+
+ORIGINAL CONTEXT:
+{
+  "span_id": "tiny_123",
+  "func_full_name": "tiny_operation",
+  "log_0": {
+    "message": "Quick operation"
+  }
+}
+
+CHUNKED CONTEXT (1 chunks):
+
+--- Chunk 1 ---
+{
+  "span_id": "tiny_123",
+  "func_full_name": "tiny_operation",
+  "log_0": {
+    "message": "Quick operation"
+  }
+}
+
+
+================================================================================
+TEST: Small Nested Span
+================================================================================
+
+ORIGINAL CONTEXT:
+{
+  "span_id": "small_456",
+  "func_full_name": "small_operation",
+  "log_0": {
+    "message": "Starting small operation"
+  },
+  "log_1": {
+    "message": "Step 1 complete"
+  },
+  "child_span": {
+    "span_id": "child_789",
+    "func_full_name": "child_op",
+    "log_0": {
+      "message": "Child running"
+    }
+  }
+}
+
+CHUNKED CONTEXT (1 chunks):
+
+--- Chunk 1 ---
+{
+  "span_id": "small_456",
+  "func_full_name": "small_operation",
+  "log_0": {
+    "message": "Starting small operation"
+  },
+  "log_1": {
+    "message": "Step 1 complete"
+  },
+  "child_span": {
+    "span_id": "child_789",
+    "func_full_name": "child_op",
+    "log_0": {
+      "message": "Child running"
+    }
+  }
+}
+
+
+================================================================================
+TEST: Medium Span with Moderate Nesting
+================================================================================
+
+ORIGINAL CONTEXT:
+{
+  "span_id": "medium_abc",
+  "func_full_name": "medium_operation",
+  "log_0": {
+    "message": "Starting medium operation"
+  },
+  "log_1": {
+    "message": "Phase 1: Initialization"
+  },
+  "log_2": {
+    "message": "Phase 2: Validation"
+  },
+  "validation_span": {
+    "span_id": "val_def",
+    "func_full_name": "validate",
+    "log_0": {
+      "message": "Validating input schema"
+    },
+    "log_1": {
+      "message": "Checking data integrity"
+    },
+    "log_2": {
+      "message": "Validation passed"
+    }
+  },
+  "log_3": {
+    "message": "Phase 3: Processing"
+  },
+  "process_span": {
+    "span_id": "proc_ghi",
+    "func_full_name": "process",
+    "log_0": {
+      "message": "Processing started"
+    },
+    "log_1": {
+      "message": "Processing complete"
+    }
+  },
+  "log_4": {
+    "message": "Operation completed"
+  }
+}
+
+CHUNKED CONTEXT (2 chunks):
+
+--- Chunk 1 ---
+{
+  "span_id": "medium_abc",
+  "func_full_name": "medium_operation",
+  "log_0": {
+    "message": "Starting medium operation"
+  },
+  "log_1": {
+    "message": "Phase 1: Initialization"
+  },
+  "log_2": {
+    "message": "Phase 2: Validation"
+  },
+  "log_3": {
+    "message": "Phase 3: Processing"
+  },
+  "log_4": {
+    "message": "Operation completed"
+  },
+  "validation_span": {
+    "span_id": "val_def",
+    "func_full_name": "validate",
+    "log_0": {
+      "message": "Validating input schema"
+    },
+    "log_1": {
+      "message": "Checking data integrity"
+    },
+    "log_2": {
+      "message": "Validation passed"
+    }
+  }
+}
+
+--- Chunk 2 ---
+{
+  "_parent_context": {
+    "span_id": "medium_abc",
+    "func_full_name": "medium_operation"
+  },
+  "process_span": {
+    "span_id": "proc_ghi",
+    "func_full_name": "process",
+    "log_0": {
+      "message": "Processing started"
+    },
+    "log_1": {
+      "message": "Processing complete"
+    }
+  }
+}
+
+
+================================================================================
+TEST: Large Span with 20+ Logs
+================================================================================
+
+ORIGINAL CONTEXT:
+{
+  "span_id": "large_jkl",
+  "func_full_name": "large_operation",
+  "log_0": {
+    "message": "Log entry 0: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_1": {
+    "message": "Log entry 1: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_2": {
+    "message": "Log entry 2: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_3": {
+    "message": "Log entry 3: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_4": {
+    "message": "Log entry 4: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_5": {
+    "message": "Log entry 5: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_6": {
+    "message": "Log entry 6: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_7": {
+    "message": "Log entry 7: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_8": {
+    "message": "Log entry 8: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_9": {
+    "message": "Log entry 9: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_10": {
+    "message": "Log entry 10: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_11": {
+    "message": "Log entry 11: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_12": {
+    "message": "Log entry 12: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_13": {
+    "message": "Log entry 13: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_14": {
+    "message": "Log entry 14: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_15": {
+    "message": "Log entry 15: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_16": {
+    "message": "Log entry 16: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_17": {
+    "message": "Log entry 17: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_18": {
+    "message": "Log entry 18: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_19": {
+    "message": "Log entry 19: This is a detailed log message with additional context and information that makes it larger"
+  }
+}
+
+CHUNKED CONTEXT (4 chunks):
+
+--- Chunk 1 ---
+{
+  "span_id": "large_jkl",
+  "func_full_name": "large_operation",
+  "log_0": {
+    "message": "Log entry 0: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_1": {
+    "message": "Log entry 1: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_2": {
+    "message": "Log entry 2: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_3": {
+    "message": "Log entry 3: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_4": {
+    "message": "Log entry 4: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_5": {
+    "message": "Log entry 5: This is a detailed log message with additional context and information that makes it larger"
+  }
+}
+
+--- Chunk 2 ---
+{
+  "span_id": "large_jkl",
+  "func_full_name": "large_operation",
+  "log_6": {
+    "message": "Log entry 6: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_7": {
+    "message": "Log entry 7: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_8": {
+    "message": "Log entry 8: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_9": {
+    "message": "Log entry 9: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_10": {
+    "message": "Log entry 10: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_11": {
+    "message": "Log entry 11: This is a detailed log message with additional context and information that makes it larger"
+  }
+}
+
+--- Chunk 3 ---
+{
+  "span_id": "large_jkl",
+  "func_full_name": "large_operation",
+  "log_12": {
+    "message": "Log entry 12: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_13": {
+    "message": "Log entry 13: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_14": {
+    "message": "Log entry 14: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_15": {
+    "message": "Log entry 15: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_16": {
+    "message": "Log entry 16: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_17": {
+    "message": "Log entry 17: This is a detailed log message with additional context and information that makes it larger"
+  }
+}
+
+--- Chunk 4 ---
+{
+  "span_id": "large_jkl",
+  "func_full_name": "large_operation",
+  "log_18": {
+    "message": "Log entry 18: This is a detailed log message with additional context and information that makes it larger"
+  },
+  "log_19": {
+    "message": "Log entry 19: This is a detailed log message with additional context and information that makes it larger"
+  }
+}
+
+
+================================================================================
+TEST: Deep Nesting (3+ levels)
+================================================================================
+
+ORIGINAL CONTEXT:
+{
+  "span_id": "root_mno",
+  "func_full_name": "root_operation",
+  "log_0": {
+    "message": "Root level operation started"
+  },
+  "level_1_span": {
+    "span_id": "level1_pqr",
+    "func_full_name": "level_1_operation",
+    "log_0": {
+      "message": "Level 1 operation"
+    },
+    "level_2_span": {
+      "span_id": "level2_stu",
+      "func_full_name": "level_2_operation",
+      "log_0": {
+        "message": "Level 2 operation"
+      },
+      "level_3_span": {
+        "span_id": "level3_vwx",
+        "func_full_name": "level_3_operation",
+        "log_0": {
+          "message": "Level 3 operation - deepest level"
+        }
+      }
+    }
+  }
+}
+
+CHUNKED CONTEXT (1 chunks):
+
+--- Chunk 1 ---
+{
+  "span_id": "root_mno",
+  "func_full_name": "root_operation",
+  "log_0": {
+    "message": "Root level operation started"
+  },
+  "level_1_span": {
+    "span_id": "level1_pqr",
+    "func_full_name": "level_1_operation",
+    "log_0": {
+      "message": "Level 1 operation"
+    },
+    "level_2_span": {
+      "span_id": "level2_stu",
+      "func_full_name": "level_2_operation",
+      "log_0": {
+        "message": "Level 2 operation"
+      },
+      "level_3_span": {
+        "span_id": "level3_vwx",
+        "func_full_name": "level_3_operation",
+        "log_0": {
+          "message": "Level 3 operation - deepest level"
+        }
+      }
+    }
+  }
+}
+
+
+================================================================================
+TEST: Multiple Children (4 siblings)
+================================================================================
+
+ORIGINAL CONTEXT:
+{
+  "span_id": "parent_yz1",
+  "func_full_name": "parent_operation",
+  "log_0": {
+    "message": "Parent operation with multiple children"
+  },
+  "child_1": {
+    "span_id": "child_a1",
+    "func_full_name": "child_operation_1",
+    "log_0": {
+      "message": "Child 1 executing"
+    }
+  },
+  "child_2": {
+    "span_id": "child_b2",
+    "func_full_name": "child_operation_2",
+    "log_0": {
+      "message": "Child 2 executing"
+    }
+  },
+  "child_3": {
+    "span_id": "child_c3",
+    "func_full_name": "child_operation_3",
+    "log_0": {
+      "message": "Child 3 executing"
+    }
+  },
+  "child_4": {
+    "span_id": "child_d4",
+    "func_full_name": "child_operation_4",
+    "log_0": {
+      "message": "Child 4 executing"
+    }
+  }
+}
+
+CHUNKED CONTEXT (2 chunks):
+
+--- Chunk 1 ---
+{
+  "span_id": "parent_yz1",
+  "func_full_name": "parent_operation",
+  "log_0": {
+    "message": "Parent operation with multiple children"
+  },
+  "child_1": {
+    "span_id": "child_a1",
+    "func_full_name": "child_operation_1",
+    "log_0": {
+      "message": "Child 1 executing"
+    }
+  },
+  "child_2": {
+    "span_id": "child_b2",
+    "func_full_name": "child_operation_2",
+    "log_0": {
+      "message": "Child 2 executing"
+    }
+  },
+  "child_3": {
+    "span_id": "child_c3",
+    "func_full_name": "child_operation_3",
+    "log_0": {
+      "message": "Child 3 executing"
+    }
+  }
+}
+
+--- Chunk 2 ---
+{
+  "_parent_context": {
+    "span_id": "parent_yz1",
+    "func_full_name": "parent_operation"
+  },
+  "child_4": {
+    "span_id": "child_d4",
+    "func_full_name": "child_operation_4",
+    "log_0": {
+      "message": "Child 4 executing"
+    }
+  }
+}
+
+
+================================================================================
+TEST: Complex Nested (subsystems with components)
+================================================================================
+
+ORIGINAL CONTEXT:
+{
+  "span_id": "complex_root",
+  "func_full_name": "complex_operation",
+  "log_0": {
+    "message": "Complex operation started"
+  },
+  "log_1": {
+    "message": "Initializing subsystems"
+  },
+  "subsystem_a": {
+    "span_id": "subsys_a",
+    "func_full_name": "subsystem_a_init",
+    "log_0": {
+      "message": "Subsystem A initializing"
+    },
+    "component_a1": {
+      "span_id": "comp_a1",
+      "func_full_name": "component_a1",
+      "log_0": {
+        "message": "Component A1 starting"
+      },
+      "log_1": {
+        "message": "Component A1 ready"
+      }
+    },
+    "component_a2": {
+      "span_id": "comp_a2",
+      "func_full_name": "component_a2",
+      "log_0": {
+        "message": "Component A2 starting"
+      },
+      "log_1": {
+        "message": "Component A2 ready"
+      }
+    }
+  },
+  "subsystem_b": {
+    "span_id": "subsys_b",
+    "func_full_name": "subsystem_b_init",
+    "log_0": {
+      "message": "Subsystem B initializing"
+    },
+    "component_b1": {
+      "span_id": "comp_b1",
+      "func_full_name": "component_b1",
+      "log_0": {
+        "message": "Component B1 starting"
+      }
+    }
+  },
+  "log_2": {
+    "message": "All subsystems initialized"
+  }
+}
+
+CHUNKED CONTEXT (2 chunks):
+
+--- Chunk 1 ---
+{
+  "span_id": "complex_root",
+  "func_full_name": "complex_operation",
+  "log_0": {
+    "message": "Complex operation started"
+  },
+  "log_1": {
+    "message": "Initializing subsystems"
+  },
+  "log_2": {
+    "message": "All subsystems initialized"
+  },
+  "subsystem_b": {
+    "span_id": "subsys_b",
+    "func_full_name": "subsystem_b_init",
+    "log_0": {
+      "message": "Subsystem B initializing"
+    },
+    "component_b1": {
+      "span_id": "comp_b1",
+      "func_full_name": "component_b1",
+      "log_0": {
+        "message": "Component B1 starting"
+      }
+    }
+  }
+}
+
+--- Chunk 2 ---
+{
+  "_parent_context": {
+    "span_id": "complex_root",
+    "func_full_name": "complex_operation"
+  },
+  "subsystem_a": {
+    "span_id": "subsys_a",
+    "func_full_name": "subsystem_a_init",
+    "log_0": {
+      "message": "Subsystem A initializing"
+    },
+    "component_a1": {
+      "span_id": "comp_a1",
+      "func_full_name": "component_a1",
+      "log_0": {
+        "message": "Component A1 starting"
+      },
+      "log_1": {
+        "message": "Component A1 ready"
+      }
+    },
+    "component_a2": {
+      "span_id": "comp_a2",
+      "func_full_name": "component_a2",
+      "log_0": {
+        "message": "Component A2 starting"
+      },
+      "log_1": {
+        "message": "Component A2 ready"
+      }
+    }
+  }
+}
+
+
+================================================================================
+TEST: Comprehensive Trace (all patterns combined)
+================================================================================
+
+ORIGINAL CONTEXT:
+{
+  "span_id": "main_comprehensive",
+  "func_full_name": "main_operation",
+  "log_0": {
+    "message": "=================================================="
+  },
+  "log_1": {
+    "message": "COMPREHENSIVE SEMANTIC CHUNKING TEST"
+  },
+  "log_2": {
+    "message": "=================================================="
+  },
+  "log_3": {
+    "message": "Testing all edge cases for hierarchical chunking"
+  },
+  "log_4": {
+    "message": "Phase 1: Small operations"
+  },
+  "tiny_op_1": {
+    "span_id": "tiny_001",
+    "func_full_name": "tiny_quick_check",
+    "log_0": {
+      "message": "Quick check passed"
+    }
+  },
+  "log_5": {
+    "message": "Phase 2: Validation with moderate nesting"
+  },
+  "validation_check": {
+    "span_id": "val_002",
+    "func_full_name": "validation_check",
+    "log_0": {
+      "message": "Starting validation"
+    },
+    "log_1": {
+      "message": "Checking schema..."
+    },
+    "log_2": {
+      "message": "Checking data integrity..."
+    },
+    "nested_validator": {
+      "span_id": "nested_val_003",
+      "func_full_name": "nested_validator",
+      "log_0": {
+        "message": "Running nested validation"
+      },
+      "log_1": {
+        "message": "Validation passed"
+      }
+    },
+    "log_3": {
+      "message": "All validations completed"
+    }
+  },
+  "log_6": {
+    "message": "Phase 3: Heavy processing with many logs"
+  },
+  "heavy_processor": {
+    "span_id": "heavy_004",
+    "func_full_name": "heavy_processor",
+    "log_0": {
+      "message": "Processing item 0 - Status: WARNING"
+    },
+    "log_1": {
+      "message": "Processing item 1 - Status: OK"
+    },
+    "log_2": {
+      "message": "Processing item 2 - Status: OK"
+    },
+    "log_3": {
+      "message": "Processing item 3 - Status: WARNING"
+    },
+    "log_4": {
+      "message": "Processing item 4 - Status: OK"
+    },
+    "log_5": {
+      "message": "Processing item 5 - Status: OK"
+    },
+    "log_6": {
+      "message": "Processing item 6 - Status: WARNING"
+    },
+    "log_7": {
+      "message": "Processing item 7 - Status: OK"
+    },
+    "log_8": {
+      "message": "Processing item 8 - Status: OK"
+    },
+    "log_9": {
+      "message": "Processing item 9 - Status: WARNING"
+    },
+    "log_10": {
+      "message": "Processing item 10 - Status: OK"
+    },
+    "log_11": {
+      "message": "Processing item 11 - Status: OK"
+    },
+    "log_12": {
+      "message": "Processing item 12 - Status: WARNING"
+    },
+    "log_13": {
+      "message": "Processing item 13 - Status: OK"
+    },
+    "log_14": {
+      "message": "Processing item 14 - Status: OK"
+    }
+  },
+  "log_7": {
+    "message": "Phase 4: Parallel operations (multiple children)"
+  },
+  "parallel_executor": {
+    "span_id": "parallel_005",
+    "func_full_name": "parallel_executor",
+    "log_0": {
+      "message": "Starting parallel execution"
+    },
+    "worker_1": {
+      "span_id": "worker_001",
+      "func_full_name": "worker_process",
+      "log_0": {
+        "message": "Worker 1 processing..."
+      },
+      "log_1": {
+        "message": "Worker 1 complete"
+      }
+    },
+    "worker_2": {
+      "span_id": "worker_002",
+      "func_full_name": "worker_process",
+      "log_0": {
+        "message": "Worker 2 processing..."
+      },
+      "log_1": {
+        "message": "Worker 2 complete"
+      }
+    },
+    "worker_3": {
+      "span_id": "worker_003",
+      "func_full_name": "worker_process",
+      "log_0": {
+        "message": "Worker 3 processing..."
+      },
+      "log_1": {
+        "message": "Worker 3 failed - retrying..."
+      },
+      "log_2": {
+        "message": "Worker 3 retry successful"
+      }
+    }
+  },
+  "log_8": {
+    "message": "Phase 5: Deep nesting test"
+  },
+  "deep_operation": {
+    "span_id": "deep_006",
+    "func_full_name": "deep_operation",
+    "log_0": {
+      "message": "Level 1"
+    },
+    "level_2": {
+      "span_id": "deep_007",
+      "func_full_name": "level_2_op",
+      "log_0": {
+        "message": "Level 2"
+      },
+      "level_3": {
+        "span_id": "deep_008",
+        "func_full_name": "level_3_op",
+        "log_0": {
+          "message": "Level 3 - deepest operation"
+        }
+      }
+    }
+  },
+  "log_9": {
+    "message": "=================================================="
+  },
+  "log_10": {
+    "message": "TEST SUMMARY"
+  },
+  "log_11": {
+    "message": "All phases completed successfully"
+  },
+  "log_12": {
+    "message": "=================================================="
+  }
+}
+
+CHUNKED CONTEXT (8 chunks):
+
+--- Chunk 1 ---
+{
+  "span_id": "main_comprehensive",
+  "func_full_name": "main_operation",
+  "log_0": {
+    "message": "=================================================="
+  },
+  "log_1": {
+    "message": "COMPREHENSIVE SEMANTIC CHUNKING TEST"
+  },
+  "log_2": {
+    "message": "=================================================="
+  },
+  "log_3": {
+    "message": "Testing all edge cases for hierarchical chunking"
+  },
+  "log_4": {
+    "message": "Phase 1: Small operations"
+  },
+  "log_5": {
+    "message": "Phase 2: Validation with moderate nesting"
+  },
+  "log_6": {
+    "message": "Phase 3: Heavy processing with many logs"
+  },
+  "log_7": {
+    "message": "Phase 4: Parallel operations (multiple children)"
+  },
+  "log_8": {
+    "message": "Phase 5: Deep nesting test"
+  },
+  "log_9": {
+    "message": "=================================================="
+  },
+  "log_10": {
+    "message": "TEST SUMMARY"
+  },
+  "log_11": {
+    "message": "All phases completed successfully"
+  }
+}
+
+--- Chunk 2 ---
+{
+  "span_id": "main_comprehensive",
+  "func_full_name": "main_operation",
+  "log_12": {
+    "message": "=================================================="
+  }
+}
+
+--- Chunk 3 ---
+{
+  "_parent_span_id": "main_comprehensive",
+  "_parent_function": "main_operation",
+  "span_id": "tiny_001",
+  "func_full_name": "tiny_quick_check",
+  "log_0": {
+    "message": "Quick check passed"
+  }
+}
+
+--- Chunk 4 ---
+{
+  "_parent_span_id": "main_comprehensive",
+  "_parent_function": "main_operation",
+  "span_id": "val_002",
+  "func_full_name": "validation_check",
+  "log_0": {
+    "message": "Starting validation"
+  },
+  "log_1": {
+    "message": "Checking schema..."
+  },
+  "log_2": {
+    "message": "Checking data integrity..."
+  },
+  "log_3": {
+    "message": "All validations completed"
+  },
+  "nested_validator": {
+    "span_id": "nested_val_003",
+    "func_full_name": "nested_validator",
+    "log_0": {
+      "message": "Running nested validation"
+    },
+    "log_1": {
+      "message": "Validation passed"
+    }
+  }
+}
+
+--- Chunk 5 ---
+{
+  "_parent_span_id": "main_comprehensive",
+  "_parent_function": "main_operation",
+  "span_id": "heavy_004",
+  "func_full_name": "heavy_processor",
+  "log_0": {
+    "message": "Processing item 0 - Status: WARNING"
+  },
+  "log_1": {
+    "message": "Processing item 1 - Status: OK"
+  },
+  "log_2": {
+    "message": "Processing item 2 - Status: OK"
+  },
+  "log_3": {
+    "message": "Processing item 3 - Status: WARNING"
+  },
+  "log_4": {
+    "message": "Processing item 4 - Status: OK"
+  },
+  "log_5": {
+    "message": "Processing item 5 - Status: OK"
+  },
+  "log_6": {
+    "message": "Processing item 6 - Status: WARNING"
+  },
+  "log_7": {
+    "message": "Processing item 7 - Status: OK"
+  },
+  "log_8": {
+    "message": "Processing item 8 - Status: OK"
+  },
+  "log_9": {
+    "message": "Processing item 9 - Status: WARNING"
+  },
+  "log_10": {
+    "message": "Processing item 10 - Status: OK"
+  },
+  "log_11": {
+    "message": "Processing item 11 - Status: OK"
+  }
+}
+
+--- Chunk 6 ---
+{
+  "_parent_span_id": "main_comprehensive",
+  "_parent_function": "main_operation",
+  "span_id": "heavy_004",
+  "func_full_name": "heavy_processor",
+  "log_12": {
+    "message": "Processing item 12 - Status: WARNING"
+  },
+  "log_13": {
+    "message": "Processing item 13 - Status: OK"
+  },
+  "log_14": {
+    "message": "Processing item 14 - Status: OK"
+  }
+}
+
+--- Chunk 7 ---
+{
+  "_parent_span_id": "main_comprehensive",
+  "_parent_function": "main_operation",
+  "span_id": "parallel_005",
+  "func_full_name": "parallel_executor",
+  "log_0": {
+    "message": "Starting parallel execution"
+  },
+  "worker_1": {
+    "span_id": "worker_001",
+    "func_full_name": "worker_process",
+    "log_0": {
+      "message": "Worker 1 processing..."
+    },
+    "log_1": {
+      "message": "Worker 1 complete"
+    }
+  },
+  "worker_2": {
+    "span_id": "worker_002",
+    "func_full_name": "worker_process",
+    "log_0": {
+      "message": "Worker 2 processing..."
+    },
+    "log_1": {
+      "message": "Worker 2 complete"
+    }
+  },
+  "worker_3": {
+    "span_id": "worker_003",
+    "func_full_name": "worker_process",
+    "log_0": {
+      "message": "Worker 3 processing..."
+    },
+    "log_1": {
+      "message": "Worker 3 failed - retrying..."
+    },
+    "log_2": {
+      "message": "Worker 3 retry successful"
+    }
+  }
+}
+
+--- Chunk 8 ---
+{
+  "_parent_span_id": "main_comprehensive",
+  "_parent_function": "main_operation",
+  "span_id": "deep_006",
+  "func_full_name": "deep_operation",
+  "log_0": {
+    "message": "Level 1"
+  },
+  "level_2": {
+    "span_id": "deep_007",
+    "func_full_name": "level_2_op",
+    "log_0": {
+      "message": "Level 2"
+    },
+    "level_3": {
+      "span_id": "deep_008",
+      "func_full_name": "level_3_op",
+      "log_0": {
+        "message": "Level 3 - deepest operation"
+      }
+    }
+  }
+}
+

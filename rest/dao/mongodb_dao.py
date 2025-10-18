@@ -41,26 +41,11 @@ class TraceRootMongoDBClient:
     async def insert_chat_metadata(self, metadata: dict[str, Any]):
         pass
 
-    async def insert_integration_token(
-        self,
-        user_email: str,
-        token: str,
-        token_type: str,
-    ) -> bool:
-        pass
-
     async def get_integration_token(
         self,
         user_email: str,
         token_type: str,
     ) -> str | None:
-        pass
-
-    async def delete_integration_token(
-        self,
-        user_email: str,
-        token_type: str,
-    ) -> bool:
         pass
 
     async def insert_traceroot_token(
@@ -72,24 +57,25 @@ class TraceRootMongoDBClient:
     ) -> bool:
         pass
 
-    async def get_traceroot_token(
-        self,
-        hashed_user_sub: str,
-    ) -> str | None:
-        pass
-
-    async def delete_traceroot_token(
-        self,
-        hashed_user_sub: str,
-    ) -> bool:
-        pass
-
     async def get_credentials_by_token(
         self,
         token: str,
     ) -> dict[str,
               Any] | None:
         pass
+
+    async def get_user_sub_by_hash(
+        self,
+        hashed_user_sub: str,
+    ) -> str | None:
+        r"""Get user_sub by hashed user sub.
+
+        Args:
+            hashed_user_sub (str): The hashed user sub to search for
+
+        Returns:
+            str | None: The user_sub if found, None otherwise
+        """
 
     async def get_trace_provider_config(
         self,

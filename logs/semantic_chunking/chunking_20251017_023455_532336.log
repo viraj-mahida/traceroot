@@ -1,0 +1,2054 @@
+
+================================================================================
+WHOLE CONTEXT (before chunking):
+================================================================================
+{
+    "span_id": "f0b0a1b654a4f3e4",
+    "func_full_name": "__main__.main_operation",
+    "log_0": {
+        "log message value": "================================================================================"
+    },
+    "log_1": {
+        "log message value": "STARTING SEMANTIC CHUNKING TEST - MAIN OPERATION"
+    },
+    "log_2": {
+        "log message value": "================================================================================"
+    },
+    "log_3": {
+        "log message value": "This trace will generate many logs and nested spans to test semantic chunking"
+    },
+    "log_4": {
+        "log message value": "Initializing main operation"
+    },
+    "log_5": {
+        "log message value": "Environment: production"
+    },
+    "log_6": {
+        "log message value": "User: test_user_123"
+    },
+    "log_7": {
+        "log message value": "Session ID: sess_xyz789"
+    },
+    "log_8": {
+        "log message value": "Phase 1: Data validation and preprocessing"
+    },
+    "ccb6c1d3c240191d": {
+        "span_id": "ccb6c1d3c240191d",
+        "func_full_name": "__main__.validation_check",
+        "log_0": {
+            "log message value": "Running validation check #0"
+        },
+        "log_1": {
+            "log message value": "Check #0: Validating input schema"
+        },
+        "log_2": {
+            "log message value": "Check #0: Checking data integrity"
+        },
+        "log_3": {
+            "log message value": "Check #0: Verifying permissions"
+        },
+        "log_4": {
+            "log message value": "Check #0: Found 2 minor validation warnings"
+        },
+        "log_5": {
+            "log message value": "Check #0: Field 'email' format suspicious"
+        }
+    },
+    "c993997e610336ec": {
+        "span_id": "c993997e610336ec",
+        "func_full_name": "__main__.validation_check",
+        "log_0": {
+            "log message value": "Running validation check #1"
+        },
+        "log_1": {
+            "log message value": "Check #1: Validating input schema"
+        },
+        "log_2": {
+            "log message value": "Check #1: Checking data integrity"
+        },
+        "log_3": {
+            "log message value": "Check #1: Verifying permissions"
+        },
+        "log_4": {
+            "log message value": "Check #1: All validations passed"
+        }
+    },
+    "457b4944d623fd6c": {
+        "span_id": "457b4944d623fd6c",
+        "func_full_name": "__main__.validation_check",
+        "log_0": {
+            "log message value": "Running validation check #2"
+        },
+        "log_1": {
+            "log message value": "Check #2: Validating input schema"
+        },
+        "log_2": {
+            "log message value": "Check #2: Checking data integrity"
+        },
+        "log_3": {
+            "log message value": "Check #2: Verifying permissions"
+        },
+        "log_4": {
+            "log message value": "Check #2: All validations passed"
+        }
+    },
+    "76433c6c117cc465": {
+        "span_id": "76433c6c117cc465",
+        "func_full_name": "__main__.validation_check",
+        "log_0": {
+            "log message value": "Running validation check #3"
+        },
+        "log_1": {
+            "log message value": "Check #3: Validating input schema"
+        },
+        "log_2": {
+            "log message value": "Check #3: Checking data integrity"
+        },
+        "log_3": {
+            "log message value": "Check #3: Verifying permissions"
+        },
+        "log_4": {
+            "log message value": "Check #3: All validations passed"
+        }
+    },
+    "73dd16fbf2671e72": {
+        "span_id": "73dd16fbf2671e72",
+        "func_full_name": "__main__.validation_check",
+        "log_0": {
+            "log message value": "Running validation check #4"
+        },
+        "log_1": {
+            "log message value": "Check #4: Validating input schema"
+        },
+        "log_2": {
+            "log message value": "Check #4: Checking data integrity"
+        },
+        "log_3": {
+            "log message value": "Check #4: Verifying permissions"
+        },
+        "log_4": {
+            "log message value": "Check #4: Found 2 minor validation warnings"
+        },
+        "log_5": {
+            "log message value": "Check #4: Field 'email' format suspicious"
+        }
+    },
+    "log_9": {
+        "log message value": "Phase 2: Data processing"
+    },
+    "25d9be583af8c1d6": {
+        "span_id": "25d9be583af8c1d6",
+        "func_full_name": "__main__.process_data_batch",
+        "log_0": {
+            "log message value": "Processing batch #0"
+        },
+        "log_1": {
+            "log message value": "Batch #0: Size = 1000 items"
+        },
+        "log_2": {
+            "log message value": "Batch #0: Step 1/5 - Processing items 0 to 200"
+        },
+        "log_3": {
+            "log message value": "Batch #0: Step 2/5 - Processing items 200 to 400"
+        },
+        "log_4": {
+            "log message value": "Batch #0: Step 3/5 - Processing items 400 to 600"
+        },
+        "log_5": {
+            "log message value": "Batch #0: Step 4/5 - Processing items 600 to 800"
+        },
+        "log_6": {
+            "log message value": "Batch #0: Step 5/5 - Processing items 800 to 1000"
+        },
+        "log_7": {
+            "log message value": "Batch #0: Processing completed"
+        },
+        "log_8": {
+            "log message value": "Batch #0: Success rate: 98.5%"
+        },
+        "4f3a806bf468a181": {
+            "span_id": "4f3a806bf468a181",
+            "func_full_name": "__main__.api_call",
+            "log_0": {
+                "log message value": "Making API call #0"
+            },
+            "log_1": {
+                "log message value": "API call #0: Request URL: https://api.example.com/data"
+            },
+            "log_2": {
+                "log message value": "API call #0: Request headers: Authorization: Bearer token123"
+            },
+            "log_3": {
+                "log message value": "API call #0: Slow response - took 150ms"
+            },
+            "log_4": {
+                "log message value": "API call #0: Status 200 but performance degraded"
+            }
+        },
+        "2b44605a14dbc579": {
+            "span_id": "2b44605a14dbc579",
+            "func_full_name": "__main__.api_call",
+            "log_0": {
+                "log message value": "Making API call #1"
+            },
+            "log_1": {
+                "log message value": "API call #1: Request URL: https://api.example.com/data"
+            },
+            "log_2": {
+                "log message value": "API call #1: Request headers: Authorization: Bearer token123"
+            },
+            "log_3": {
+                "log message value": "API call #1: Slow response - took 150ms"
+            },
+            "log_4": {
+                "log message value": "API call #1: Status 200 but performance degraded"
+            }
+        },
+        "0b0e1a62a2ce8220": {
+            "span_id": "0b0e1a62a2ce8220",
+            "func_full_name": "__main__.api_call",
+            "log_0": {
+                "log message value": "Making API call #2"
+            },
+            "log_1": {
+                "log message value": "API call #2: Request URL: https://api.example.com/data"
+            },
+            "log_2": {
+                "log message value": "API call #2: Request headers: Authorization: Bearer token123"
+            },
+            "log_3": {
+                "log message value": "API call #2: Failed with status 500"
+            },
+            "log_4": {
+                "log message value": "API call #2: Error message: Internal Server Error"
+            },
+            "log_5": {
+                "log message value": "API call #2: Retrying..."
+            }
+        }
+    },
+    "46b96cf25550945b": {
+        "span_id": "46b96cf25550945b",
+        "func_full_name": "__main__.process_data_batch",
+        "log_0": {
+            "log message value": "Processing batch #1"
+        },
+        "log_1": {
+            "log message value": "Batch #1: Size = 1000 items"
+        },
+        "log_2": {
+            "log message value": "Batch #1: Step 1/5 - Processing items 0 to 200"
+        },
+        "log_3": {
+            "log message value": "Batch #1: Step 2/5 - Processing items 200 to 400"
+        },
+        "log_4": {
+            "log message value": "Batch #1: Step 3/5 - Processing items 400 to 600"
+        },
+        "log_5": {
+            "log message value": "Batch #1: Step 4/5 - Processing items 600 to 800"
+        },
+        "log_6": {
+            "log message value": "Batch #1: Step 5/5 - Processing items 800 to 1000"
+        },
+        "log_7": {
+            "log message value": "Batch #1: Processing completed"
+        },
+        "log_8": {
+            "log message value": "Batch #1: Success rate: 98.5%"
+        },
+        "e92fd300340c326e": {
+            "span_id": "e92fd300340c326e",
+            "func_full_name": "__main__.api_call",
+            "log_0": {
+                "log message value": "Making API call #10"
+            },
+            "log_1": {
+                "log message value": "API call #10: Request URL: https://api.example.com/data"
+            },
+            "log_2": {
+                "log message value": "API call #10: Request headers: Authorization: Bearer token123"
+            },
+            "log_3": {
+                "log message value": "API call #10: Success - Status 200"
+            },
+            "log_4": {
+                "log message value": "API call #10: Response time: 50ms"
+            }
+        },
+        "840cab2ffae175e1": {
+            "span_id": "840cab2ffae175e1",
+            "func_full_name": "__main__.api_call",
+            "log_0": {
+                "log message value": "Making API call #11"
+            },
+            "log_1": {
+                "log message value": "API call #11: Request URL: https://api.example.com/data"
+            },
+            "log_2": {
+                "log message value": "API call #11: Request headers: Authorization: Bearer token123"
+            },
+            "log_3": {
+                "log message value": "API call #11: Success - Status 200"
+            },
+            "log_4": {
+                "log message value": "API call #11: Response time: 50ms"
+            }
+        },
+        "c901bb4d031e6045": {
+            "span_id": "c901bb4d031e6045",
+            "func_full_name": "__main__.api_call",
+            "log_0": {
+                "log message value": "Making API call #12"
+            },
+            "log_1": {
+                "log message value": "API call #12: Request URL: https://api.example.com/data"
+            },
+            "log_2": {
+                "log message value": "API call #12: Request headers: Authorization: Bearer token123"
+            },
+            "log_3": {
+                "log message value": "API call #12: Success - Status 200"
+            },
+            "log_4": {
+                "log message value": "API call #12: Response time: 50ms"
+            }
+        }
+    },
+    "acb2a0aaf8b61708": {
+        "span_id": "acb2a0aaf8b61708",
+        "func_full_name": "__main__.process_data_batch",
+        "log_0": {
+            "log message value": "Processing batch #2"
+        },
+        "log_1": {
+            "log message value": "Batch #2: Size = 1000 items"
+        },
+        "log_2": {
+            "log message value": "Batch #2: Step 1/5 - Processing items 0 to 200"
+        },
+        "log_3": {
+            "log message value": "Batch #2: Step 2/5 - Processing items 200 to 400"
+        },
+        "log_4": {
+            "log message value": "Batch #2: Step 3/5 - Processing items 400 to 600"
+        },
+        "log_5": {
+            "log message value": "Batch #2: Step 4/5 - Processing items 600 to 800"
+        },
+        "log_6": {
+            "log message value": "Batch #2: Step 5/5 - Processing items 800 to 1000"
+        },
+        "log_7": {
+            "log message value": "Batch #2: Processing completed"
+        },
+        "log_8": {
+            "log message value": "Batch #2: Success rate: 98.5%"
+        },
+        "9746ca39c63b1a3f": {
+            "span_id": "9746ca39c63b1a3f",
+            "func_full_name": "__main__.api_call",
+            "log_0": {
+                "log message value": "Making API call #20"
+            },
+            "log_1": {
+                "log message value": "API call #20: Request URL: https://api.example.com/data"
+            },
+            "log_2": {
+                "log message value": "API call #20: Request headers: Authorization: Bearer token123"
+            },
+            "log_3": {
+                "log message value": "API call #20: Failed with status 500"
+            },
+            "log_4": {
+                "log message value": "API call #20: Error message: Internal Server Error"
+            },
+            "log_5": {
+                "log message value": "API call #20: Retrying..."
+            }
+        },
+        "25c787b2cfdbde8f": {
+            "span_id": "25c787b2cfdbde8f",
+            "func_full_name": "__main__.api_call",
+            "log_0": {
+                "log message value": "Making API call #21"
+            },
+            "log_1": {
+                "log message value": "API call #21: Request URL: https://api.example.com/data"
+            },
+            "log_2": {
+                "log message value": "API call #21: Request headers: Authorization: Bearer token123"
+            },
+            "log_3": {
+                "log message value": "API call #21: Failed with status 500"
+            },
+            "log_4": {
+                "log message value": "API call #21: Error message: Internal Server Error"
+            },
+            "log_5": {
+                "log message value": "API call #21: Retrying..."
+            }
+        },
+        "cf88644ed0b276ba": {
+            "span_id": "cf88644ed0b276ba",
+            "func_full_name": "__main__.api_call",
+            "log_0": {
+                "log message value": "Making API call #22"
+            },
+            "log_1": {
+                "log message value": "API call #22: Request URL: https://api.example.com/data"
+            },
+            "log_2": {
+                "log message value": "API call #22: Request headers: Authorization: Bearer token123"
+            },
+            "log_3": {
+                "log message value": "API call #22: Success - Status 200"
+            },
+            "log_4": {
+                "log message value": "API call #22: Response time: 50ms"
+            }
+        }
+    },
+    "log_10": {
+        "log message value": "Phase 3: Sub-operations"
+    },
+    "38c651b28e7bf265": {
+        "span_id": "38c651b28e7bf265",
+        "func_full_name": "__main__.sub_operation",
+        "log_0": {
+            "log message value": "Starting sub-operation #0"
+        },
+        "log_1": {
+            "log message value": "Sub-operation #0: Initializing resources"
+        },
+        "32d9f3dd546b7f05": {
+            "span_id": "32d9f3dd546b7f05",
+            "func_full_name": "__main__.validation_check",
+            "log_0": {
+                "log message value": "Running validation check #0"
+            },
+            "log_1": {
+                "log message value": "Check #0: Validating input schema"
+            },
+            "log_2": {
+                "log message value": "Check #0: Checking data integrity"
+            },
+            "log_3": {
+                "log message value": "Check #0: Verifying permissions"
+            },
+            "log_4": {
+                "log message value": "Check #0: All validations passed"
+            }
+        },
+        "52dc9eb33969705f": {
+            "span_id": "52dc9eb33969705f",
+            "func_full_name": "__main__.database_query",
+            "log_0": {
+                "log message value": "Starting database query #0"
+            },
+            "log_1": {
+                "log message value": "Query #0: SELECT * FROM users WHERE active = true"
+            },
+            "log_2": {
+                "log message value": "Query #0: Executed successfully"
+            },
+            "log_3": {
+                "log message value": "Query #0: Returned 150 rows"
+            },
+            "log_4": {
+                "log message value": "Query #0: Execution time: 0.1s"
+            }
+        },
+        "log_2": {
+            "log message value": "Sub-operation #0: Completed successfully"
+        }
+    },
+    "98e23a09d8ff0ad2": {
+        "span_id": "98e23a09d8ff0ad2",
+        "func_full_name": "__main__.sub_operation",
+        "log_0": {
+            "log message value": "Starting sub-operation #1"
+        },
+        "log_1": {
+            "log message value": "Sub-operation #1: Initializing resources"
+        },
+        "e284a7bb826cd241": {
+            "span_id": "e284a7bb826cd241",
+            "func_full_name": "__main__.validation_check",
+            "log_0": {
+                "log message value": "Running validation check #1"
+            },
+            "log_1": {
+                "log message value": "Check #1: Validating input schema"
+            },
+            "log_2": {
+                "log message value": "Check #1: Checking data integrity"
+            },
+            "log_3": {
+                "log message value": "Check #1: Verifying permissions"
+            },
+            "log_4": {
+                "log message value": "Check #1: All validations passed"
+            }
+        },
+        "e48ce72faffe61da": {
+            "span_id": "e48ce72faffe61da",
+            "func_full_name": "__main__.database_query",
+            "log_0": {
+                "log message value": "Starting database query #1"
+            },
+            "log_1": {
+                "log message value": "Query #1: SELECT * FROM users WHERE active = true"
+            },
+            "log_2": {
+                "log message value": "Query #1: Executed successfully"
+            },
+            "log_3": {
+                "log message value": "Query #1: Returned 150 rows"
+            },
+            "log_4": {
+                "log message value": "Query #1: Execution time: 0.1s"
+            }
+        },
+        "log_2": {
+            "log message value": "Sub-operation #1: Completed successfully"
+        }
+    },
+    "0e0fca573458bda6": {
+        "span_id": "0e0fca573458bda6",
+        "func_full_name": "__main__.sub_operation",
+        "log_0": {
+            "log message value": "Starting sub-operation #2"
+        },
+        "log_1": {
+            "log message value": "Sub-operation #2: Initializing resources"
+        },
+        "17929e4834707baa": {
+            "span_id": "17929e4834707baa",
+            "func_full_name": "__main__.validation_check",
+            "log_0": {
+                "log message value": "Running validation check #2"
+            },
+            "log_1": {
+                "log message value": "Check #2: Validating input schema"
+            },
+            "log_2": {
+                "log message value": "Check #2: Checking data integrity"
+            },
+            "log_3": {
+                "log message value": "Check #2: Verifying permissions"
+            },
+            "log_4": {
+                "log message value": "Check #2: Found 2 minor validation warnings"
+            },
+            "log_5": {
+                "log message value": "Check #2: Field 'email' format suspicious"
+            }
+        },
+        "83a46c6f78e8802d": {
+            "span_id": "83a46c6f78e8802d",
+            "func_full_name": "__main__.database_query",
+            "log_0": {
+                "log message value": "Starting database query #2"
+            },
+            "log_1": {
+                "log message value": "Query #2: SELECT * FROM users WHERE active = true"
+            },
+            "log_2": {
+                "log message value": "Query #2: Executed successfully"
+            },
+            "log_3": {
+                "log message value": "Query #2: Returned 150 rows"
+            },
+            "log_4": {
+                "log message value": "Query #2: Execution time: 0.1s"
+            }
+        },
+        "log_2": {
+            "log message value": "Sub-operation #2: Completed successfully"
+        }
+    },
+    "0e793d9597b26df3": {
+        "span_id": "0e793d9597b26df3",
+        "func_full_name": "__main__.sub_operation",
+        "log_0": {
+            "log message value": "Starting sub-operation #3"
+        },
+        "log_1": {
+            "log message value": "Sub-operation #3: Initializing resources"
+        },
+        "3c028b06bd5c239d": {
+            "span_id": "3c028b06bd5c239d",
+            "func_full_name": "__main__.validation_check",
+            "log_0": {
+                "log message value": "Running validation check #3"
+            },
+            "log_1": {
+                "log message value": "Check #3: Validating input schema"
+            },
+            "log_2": {
+                "log message value": "Check #3: Checking data integrity"
+            },
+            "log_3": {
+                "log message value": "Check #3: Verifying permissions"
+            },
+            "log_4": {
+                "log message value": "Check #3: All validations passed"
+            }
+        },
+        "991d8822b30ffe11": {
+            "span_id": "991d8822b30ffe11",
+            "func_full_name": "__main__.database_query",
+            "log_0": {
+                "log message value": "Starting database query #3"
+            },
+            "log_1": {
+                "log message value": "Query #3: SELECT * FROM users WHERE active = true"
+            },
+            "log_2": {
+                "log message value": "Query #3: Executed successfully"
+            },
+            "log_3": {
+                "log message value": "Query #3: Returned 150 rows"
+            },
+            "log_4": {
+                "log message value": "Query #3: Execution time: 0.1s"
+            }
+        },
+        "log_2": {
+            "log message value": "Sub-operation #3: Completed successfully"
+        }
+    },
+    "log_11": {
+        "log message value": "Phase 4: Database operations"
+    },
+    "f9a8015558227081": {
+        "span_id": "f9a8015558227081",
+        "func_full_name": "__main__.database_query",
+        "log_0": {
+            "log message value": "Starting database query #100"
+        },
+        "log_1": {
+            "log message value": "Query #100: SELECT * FROM users WHERE active = true"
+        },
+        "log_2": {
+            "log message value": "Query #100: Executed successfully"
+        },
+        "log_3": {
+            "log message value": "Query #100: Returned 150 rows"
+        },
+        "log_4": {
+            "log message value": "Query #100: Execution time: 0.1s"
+        }
+    },
+    "ddaf11658c11dc4e": {
+        "span_id": "ddaf11658c11dc4e",
+        "func_full_name": "__main__.database_query",
+        "log_0": {
+            "log message value": "Starting database query #101"
+        },
+        "log_1": {
+            "log message value": "Query #101: SELECT * FROM users WHERE active = true"
+        },
+        "log_2": {
+            "log message value": "Query #101: Executed successfully"
+        },
+        "log_3": {
+            "log message value": "Query #101: Returned 150 rows"
+        },
+        "log_4": {
+            "log message value": "Query #101: Execution time: 0.1s"
+        }
+    },
+    "b4e1870c662b1213": {
+        "span_id": "b4e1870c662b1213",
+        "func_full_name": "__main__.database_query",
+        "log_0": {
+            "log message value": "Starting database query #102"
+        },
+        "log_1": {
+            "log message value": "Query #102: SELECT * FROM users WHERE active = true"
+        },
+        "log_2": {
+            "log message value": "Query #102: Executed successfully"
+        },
+        "log_3": {
+            "log message value": "Query #102: Returned 150 rows"
+        },
+        "log_4": {
+            "log message value": "Query #102: Execution time: 0.1s"
+        }
+    },
+    "30a65d47e2755049": {
+        "span_id": "30a65d47e2755049",
+        "func_full_name": "__main__.database_query",
+        "log_0": {
+            "log message value": "Starting database query #103"
+        },
+        "log_1": {
+            "log message value": "Query #103: SELECT * FROM users WHERE active = true"
+        },
+        "log_2": {
+            "log message value": "Query #103: Executed successfully"
+        },
+        "log_3": {
+            "log message value": "Query #103: Returned 150 rows"
+        },
+        "log_4": {
+            "log message value": "Query #103: Execution time: 0.1s"
+        }
+    },
+    "618db39e71cf7272": {
+        "span_id": "618db39e71cf7272",
+        "func_full_name": "__main__.database_query",
+        "log_0": {
+            "log message value": "Starting database query #104"
+        },
+        "log_1": {
+            "log message value": "Query #104: SELECT * FROM users WHERE active = true"
+        },
+        "log_2": {
+            "log message value": "Query #104: Executed successfully"
+        },
+        "log_3": {
+            "log message value": "Query #104: Returned 150 rows"
+        },
+        "log_4": {
+            "log message value": "Query #104: Execution time: 0.1s"
+        }
+    },
+    "f0423b0ec53023ef": {
+        "span_id": "f0423b0ec53023ef",
+        "func_full_name": "__main__.database_query",
+        "log_0": {
+            "log message value": "Starting database query #105"
+        },
+        "log_1": {
+            "log message value": "Query #105: SELECT * FROM users WHERE active = true"
+        },
+        "log_2": {
+            "log message value": "Query #105: Executed successfully"
+        },
+        "log_3": {
+            "log message value": "Query #105: Returned 150 rows"
+        },
+        "log_4": {
+            "log message value": "Query #105: Execution time: 0.1s"
+        }
+    },
+    "9f1c5ad358e93279": {
+        "span_id": "9f1c5ad358e93279",
+        "func_full_name": "__main__.database_query",
+        "log_0": {
+            "log message value": "Starting database query #106"
+        },
+        "log_1": {
+            "log message value": "Query #106: SELECT * FROM users WHERE active = true"
+        },
+        "log_2": {
+            "log message value": "Query #106: Executed successfully"
+        },
+        "log_3": {
+            "log message value": "Query #106: Returned 150 rows"
+        },
+        "log_4": {
+            "log message value": "Query #106: Execution time: 0.1s"
+        }
+    },
+    "c2869d34262c0930": {
+        "span_id": "c2869d34262c0930",
+        "func_full_name": "__main__.database_query",
+        "log_0": {
+            "log message value": "Starting database query #107"
+        },
+        "log_1": {
+            "log message value": "Query #107: SELECT * FROM users WHERE active = true"
+        },
+        "log_2": {
+            "log message value": "Query #107: Executed successfully"
+        },
+        "log_3": {
+            "log message value": "Query #107: Returned 150 rows"
+        },
+        "log_4": {
+            "log message value": "Query #107: Execution time: 0.1s"
+        }
+    },
+    "76cd67494c352c1c": {
+        "span_id": "76cd67494c352c1c",
+        "func_full_name": "__main__.database_query",
+        "log_0": {
+            "log message value": "Starting database query #108"
+        },
+        "log_1": {
+            "log message value": "Query #108: SELECT * FROM users WHERE active = true"
+        },
+        "log_2": {
+            "log message value": "Query #108: Executed successfully"
+        },
+        "log_3": {
+            "log message value": "Query #108: Returned 150 rows"
+        },
+        "log_4": {
+            "log message value": "Query #108: Execution time: 0.1s"
+        }
+    },
+    "a235560a5a159dcf": {
+        "span_id": "a235560a5a159dcf",
+        "func_full_name": "__main__.database_query",
+        "log_0": {
+            "log message value": "Starting database query #109"
+        },
+        "log_1": {
+            "log message value": "Query #109: SELECT * FROM users WHERE active = true"
+        },
+        "log_2": {
+            "log message value": "Query #109: Executed successfully"
+        },
+        "log_3": {
+            "log message value": "Query #109: Returned 150 rows"
+        },
+        "log_4": {
+            "log message value": "Query #109: Execution time: 0.1s"
+        }
+    },
+    "log_12": {
+        "log message value": "Phase 5: Additional API calls"
+    },
+    "141e3ba55c4457af": {
+        "span_id": "141e3ba55c4457af",
+        "func_full_name": "__main__.api_call",
+        "log_0": {
+            "log message value": "Making API call #200"
+        },
+        "log_1": {
+            "log message value": "API call #200: Request URL: https://api.example.com/data"
+        },
+        "log_2": {
+            "log message value": "API call #200: Request headers: Authorization: Bearer token123"
+        },
+        "log_3": {
+            "log message value": "API call #200: Failed with status 500"
+        },
+        "log_4": {
+            "log message value": "API call #200: Error message: Internal Server Error"
+        },
+        "log_5": {
+            "log message value": "API call #200: Retrying..."
+        }
+    },
+    "15a2bd44bfed7b6f": {
+        "span_id": "15a2bd44bfed7b6f",
+        "func_full_name": "__main__.api_call",
+        "log_0": {
+            "log message value": "Making API call #201"
+        },
+        "log_1": {
+            "log message value": "API call #201: Request URL: https://api.example.com/data"
+        },
+        "log_2": {
+            "log message value": "API call #201: Request headers: Authorization: Bearer token123"
+        },
+        "log_3": {
+            "log message value": "API call #201: Slow response - took 150ms"
+        },
+        "log_4": {
+            "log message value": "API call #201: Status 200 but performance degraded"
+        }
+    },
+    "fca915b4ac177607": {
+        "span_id": "fca915b4ac177607",
+        "func_full_name": "__main__.api_call",
+        "log_0": {
+            "log message value": "Making API call #202"
+        },
+        "log_1": {
+            "log message value": "API call #202: Request URL: https://api.example.com/data"
+        },
+        "log_2": {
+            "log message value": "API call #202: Request headers: Authorization: Bearer token123"
+        },
+        "log_3": {
+            "log message value": "API call #202: Success - Status 200"
+        },
+        "log_4": {
+            "log message value": "API call #202: Response time: 50ms"
+        }
+    },
+    "83abdaff99e69264": {
+        "span_id": "83abdaff99e69264",
+        "func_full_name": "__main__.api_call",
+        "log_0": {
+            "log message value": "Making API call #203"
+        },
+        "log_1": {
+            "log message value": "API call #203: Request URL: https://api.example.com/data"
+        },
+        "log_2": {
+            "log message value": "API call #203: Request headers: Authorization: Bearer token123"
+        },
+        "log_3": {
+            "log message value": "API call #203: Slow response - took 150ms"
+        },
+        "log_4": {
+            "log message value": "API call #203: Status 200 but performance degraded"
+        }
+    },
+    "5decdc421899b59b": {
+        "span_id": "5decdc421899b59b",
+        "func_full_name": "__main__.api_call",
+        "log_0": {
+            "log message value": "Making API call #204"
+        },
+        "log_1": {
+            "log message value": "API call #204: Request URL: https://api.example.com/data"
+        },
+        "log_2": {
+            "log message value": "API call #204: Request headers: Authorization: Bearer token123"
+        },
+        "log_3": {
+            "log message value": "API call #204: Slow response - took 150ms"
+        },
+        "log_4": {
+            "log message value": "API call #204: Status 200 but performance degraded"
+        }
+    },
+    "3c17fb62645b0e39": {
+        "span_id": "3c17fb62645b0e39",
+        "func_full_name": "__main__.api_call",
+        "log_0": {
+            "log message value": "Making API call #205"
+        },
+        "log_1": {
+            "log message value": "API call #205: Request URL: https://api.example.com/data"
+        },
+        "log_2": {
+            "log message value": "API call #205: Request headers: Authorization: Bearer token123"
+        },
+        "log_3": {
+            "log message value": "API call #205: Failed with status 500"
+        },
+        "log_4": {
+            "log message value": "API call #205: Error message: Internal Server Error"
+        },
+        "log_5": {
+            "log message value": "API call #205: Retrying..."
+        }
+    },
+    "c9863218f086fb55": {
+        "span_id": "c9863218f086fb55",
+        "func_full_name": "__main__.api_call",
+        "log_0": {
+            "log message value": "Making API call #206"
+        },
+        "log_1": {
+            "log message value": "API call #206: Request URL: https://api.example.com/data"
+        },
+        "log_2": {
+            "log message value": "API call #206: Request headers: Authorization: Bearer token123"
+        },
+        "log_3": {
+            "log message value": "API call #206: Success - Status 200"
+        },
+        "log_4": {
+            "log message value": "API call #206: Response time: 50ms"
+        }
+    },
+    "9296e36071117183": {
+        "span_id": "9296e36071117183",
+        "func_full_name": "__main__.api_call",
+        "log_0": {
+            "log message value": "Making API call #207"
+        },
+        "log_1": {
+            "log message value": "API call #207: Request URL: https://api.example.com/data"
+        },
+        "log_2": {
+            "log message value": "API call #207: Request headers: Authorization: Bearer token123"
+        },
+        "log_3": {
+            "log message value": "API call #207: Slow response - took 150ms"
+        },
+        "log_4": {
+            "log message value": "API call #207: Status 200 but performance degraded"
+        }
+    },
+    "log_13": {
+        "log message value": "================================================================================"
+    },
+    "log_14": {
+        "log message value": "OPERATION SUMMARY"
+    },
+    "log_15": {
+        "log message value": "================================================================================"
+    },
+    "log_16": {
+        "log message value": "Total validations: 5"
+    },
+    "log_17": {
+        "log message value": "Total batches processed: 3"
+    },
+    "log_18": {
+        "log message value": "Total sub-operations: 4"
+    },
+    "log_19": {
+        "log message value": "Total database queries: 10"
+    },
+    "log_20": {
+        "log message value": "Total API calls: 8"
+    },
+    "log_21": {
+        "log message value": "Overall status: SUCCESS"
+    },
+    "log_22": {
+        "log message value": "Memory usage: 234 MB"
+    },
+    "log_23": {
+        "log message value": "CPU usage: 45%"
+    },
+    "log_24": {
+        "log message value": "Network I/O: 12.5 MB"
+    },
+    "log_25": {
+        "log message value": "================================================================================"
+    },
+    "log_26": {
+        "log message value": "MAIN OPERATION COMPLETED"
+    },
+    "log_27": {
+        "log message value": "================================================================================"
+    }
+}
+================================================================================
+Context size: 35290 characters
+================================================================================
+
+
+================================================================================
+SEMANTIC CHUNKS (total: 1):
+================================================================================
+
+--- Chunk 1 of 1 ---
+Chunk size: 28940 characters
+----------------------------------------
+[
+  {
+    "span_id": "f0b0a1b654a4f3e4",
+    "func_full_name": "__main__.main_operation",
+    "log_0": {
+      "log message value": "================================================================================"
+    },
+    "log_1": {
+      "log message value": "STARTING SEMANTIC CHUNKING TEST - MAIN OPERATION"
+    },
+    "log_2": {
+      "log message value": "================================================================================"
+    },
+    "log_3": {
+      "log message value": "This trace will generate many logs and nested spans to test semantic chunking"
+    },
+    "log_4": {
+      "log message value": "Initializing main operation"
+    },
+    "log_5": {
+      "log message value": "Environment: production"
+    },
+    "log_6": {
+      "log message value": "User: test_user_123"
+    },
+    "log_7": {
+      "log message value": "Session ID: sess_xyz789"
+    },
+    "log_8": {
+      "log message value": "Phase 1: Data validation and preprocessing"
+    },
+    "log_9": {
+      "log message value": "Phase 2: Data processing"
+    },
+    "log_10": {
+      "log message value": "Phase 3: Sub-operations"
+    },
+    "log_11": {
+      "log message value": "Phase 4: Database operations"
+    },
+    "log_12": {
+      "log message value": "Phase 5: Additional API calls"
+    },
+    "log_13": {
+      "log message value": "================================================================================"
+    },
+    "log_14": {
+      "log message value": "OPERATION SUMMARY"
+    },
+    "log_15": {
+      "log message value": "================================================================================"
+    },
+    "log_16": {
+      "log message value": "Total validations: 5"
+    },
+    "log_17": {
+      "log message value": "Total batches processed: 3"
+    },
+    "log_18": {
+      "log message value": "Total sub-operations: 4"
+    },
+    "log_19": {
+      "log message value": "Total database queries: 10"
+    },
+    "log_20": {
+      "log message value": "Total API calls: 8"
+    },
+    "log_21": {
+      "log message value": "Overall status: SUCCESS"
+    },
+    "log_22": {
+      "log message value": "Memory usage: 234 MB"
+    },
+    "log_23": {
+      "log message value": "CPU usage: 45%"
+    },
+    "log_24": {
+      "log message value": "Network I/O: 12.5 MB"
+    },
+    "log_25": {
+      "log message value": "================================================================================"
+    },
+    "log_26": {
+      "log message value": "MAIN OPERATION COMPLETED"
+    },
+    "log_27": {
+      "log message value": "================================================================================"
+    }
+  },
+  {
+    "span_id": "ccb6c1d3c240191d",
+    "func_full_name": "__main__.validation_check",
+    "log_0": {
+      "log message value": "Running validation check #0"
+    },
+    "log_1": {
+      "log message value": "Check #0: Validating input schema"
+    },
+    "log_2": {
+      "log message value": "Check #0: Checking data integrity"
+    },
+    "log_3": {
+      "log message value": "Check #0: Verifying permissions"
+    },
+    "log_4": {
+      "log message value": "Check #0: Found 2 minor validation warnings"
+    },
+    "log_5": {
+      "log message value": "Check #0: Field 'email' format suspicious"
+    }
+  },
+  {
+    "span_id": "c993997e610336ec",
+    "func_full_name": "__main__.validation_check",
+    "log_0": {
+      "log message value": "Running validation check #1"
+    },
+    "log_1": {
+      "log message value": "Check #1: Validating input schema"
+    },
+    "log_2": {
+      "log message value": "Check #1: Checking data integrity"
+    },
+    "log_3": {
+      "log message value": "Check #1: Verifying permissions"
+    },
+    "log_4": {
+      "log message value": "Check #1: All validations passed"
+    }
+  },
+  {
+    "span_id": "457b4944d623fd6c",
+    "func_full_name": "__main__.validation_check",
+    "log_0": {
+      "log message value": "Running validation check #2"
+    },
+    "log_1": {
+      "log message value": "Check #2: Validating input schema"
+    },
+    "log_2": {
+      "log message value": "Check #2: Checking data integrity"
+    },
+    "log_3": {
+      "log message value": "Check #2: Verifying permissions"
+    },
+    "log_4": {
+      "log message value": "Check #2: All validations passed"
+    }
+  },
+  {
+    "span_id": "76433c6c117cc465",
+    "func_full_name": "__main__.validation_check",
+    "log_0": {
+      "log message value": "Running validation check #3"
+    },
+    "log_1": {
+      "log message value": "Check #3: Validating input schema"
+    },
+    "log_2": {
+      "log message value": "Check #3: Checking data integrity"
+    },
+    "log_3": {
+      "log message value": "Check #3: Verifying permissions"
+    },
+    "log_4": {
+      "log message value": "Check #3: All validations passed"
+    }
+  },
+  {
+    "span_id": "73dd16fbf2671e72",
+    "func_full_name": "__main__.validation_check",
+    "log_0": {
+      "log message value": "Running validation check #4"
+    },
+    "log_1": {
+      "log message value": "Check #4: Validating input schema"
+    },
+    "log_2": {
+      "log message value": "Check #4: Checking data integrity"
+    },
+    "log_3": {
+      "log message value": "Check #4: Verifying permissions"
+    },
+    "log_4": {
+      "log message value": "Check #4: Found 2 minor validation warnings"
+    },
+    "log_5": {
+      "log message value": "Check #4: Field 'email' format suspicious"
+    }
+  },
+  {
+    "span_id": "25d9be583af8c1d6",
+    "func_full_name": "__main__.process_data_batch",
+    "log_0": {
+      "log message value": "Processing batch #0"
+    },
+    "log_1": {
+      "log message value": "Batch #0: Size = 1000 items"
+    },
+    "log_2": {
+      "log message value": "Batch #0: Step 1/5 - Processing items 0 to 200"
+    },
+    "log_3": {
+      "log message value": "Batch #0: Step 2/5 - Processing items 200 to 400"
+    },
+    "log_4": {
+      "log message value": "Batch #0: Step 3/5 - Processing items 400 to 600"
+    },
+    "log_5": {
+      "log message value": "Batch #0: Step 4/5 - Processing items 600 to 800"
+    },
+    "log_6": {
+      "log message value": "Batch #0: Step 5/5 - Processing items 800 to 1000"
+    },
+    "log_7": {
+      "log message value": "Batch #0: Processing completed"
+    },
+    "log_8": {
+      "log message value": "Batch #0: Success rate: 98.5%"
+    }
+  },
+  {
+    "span_id": "4f3a806bf468a181",
+    "func_full_name": "__main__.api_call",
+    "log_0": {
+      "log message value": "Making API call #0"
+    },
+    "log_1": {
+      "log message value": "API call #0: Request URL: https://api.example.com/data"
+    },
+    "log_2": {
+      "log message value": "API call #0: Request headers: Authorization: Bearer token123"
+    },
+    "log_3": {
+      "log message value": "API call #0: Slow response - took 150ms"
+    },
+    "log_4": {
+      "log message value": "API call #0: Status 200 but performance degraded"
+    }
+  },
+  {
+    "span_id": "2b44605a14dbc579",
+    "func_full_name": "__main__.api_call",
+    "log_0": {
+      "log message value": "Making API call #1"
+    },
+    "log_1": {
+      "log message value": "API call #1: Request URL: https://api.example.com/data"
+    },
+    "log_2": {
+      "log message value": "API call #1: Request headers: Authorization: Bearer token123"
+    },
+    "log_3": {
+      "log message value": "API call #1: Slow response - took 150ms"
+    },
+    "log_4": {
+      "log message value": "API call #1: Status 200 but performance degraded"
+    }
+  },
+  {
+    "span_id": "0b0e1a62a2ce8220",
+    "func_full_name": "__main__.api_call",
+    "log_0": {
+      "log message value": "Making API call #2"
+    },
+    "log_1": {
+      "log message value": "API call #2: Request URL: https://api.example.com/data"
+    },
+    "log_2": {
+      "log message value": "API call #2: Request headers: Authorization: Bearer token123"
+    },
+    "log_3": {
+      "log message value": "API call #2: Failed with status 500"
+    },
+    "log_4": {
+      "log message value": "API call #2: Error message: Internal Server Error"
+    },
+    "log_5": {
+      "log message value": "API call #2: Retrying..."
+    }
+  },
+  {
+    "span_id": "46b96cf25550945b",
+    "func_full_name": "__main__.process_data_batch",
+    "log_0": {
+      "log message value": "Processing batch #1"
+    },
+    "log_1": {
+      "log message value": "Batch #1: Size = 1000 items"
+    },
+    "log_2": {
+      "log message value": "Batch #1: Step 1/5 - Processing items 0 to 200"
+    },
+    "log_3": {
+      "log message value": "Batch #1: Step 2/5 - Processing items 200 to 400"
+    },
+    "log_4": {
+      "log message value": "Batch #1: Step 3/5 - Processing items 400 to 600"
+    },
+    "log_5": {
+      "log message value": "Batch #1: Step 4/5 - Processing items 600 to 800"
+    },
+    "log_6": {
+      "log message value": "Batch #1: Step 5/5 - Processing items 800 to 1000"
+    },
+    "log_7": {
+      "log message value": "Batch #1: Processing completed"
+    },
+    "log_8": {
+      "log message value": "Batch #1: Success rate: 98.5%"
+    }
+  },
+  {
+    "span_id": "e92fd300340c326e",
+    "func_full_name": "__main__.api_call",
+    "log_0": {
+      "log message value": "Making API call #10"
+    },
+    "log_1": {
+      "log message value": "API call #10: Request URL: https://api.example.com/data"
+    },
+    "log_2": {
+      "log message value": "API call #10: Request headers: Authorization: Bearer token123"
+    },
+    "log_3": {
+      "log message value": "API call #10: Success - Status 200"
+    },
+    "log_4": {
+      "log message value": "API call #10: Response time: 50ms"
+    }
+  },
+  {
+    "span_id": "840cab2ffae175e1",
+    "func_full_name": "__main__.api_call",
+    "log_0": {
+      "log message value": "Making API call #11"
+    },
+    "log_1": {
+      "log message value": "API call #11: Request URL: https://api.example.com/data"
+    },
+    "log_2": {
+      "log message value": "API call #11: Request headers: Authorization: Bearer token123"
+    },
+    "log_3": {
+      "log message value": "API call #11: Success - Status 200"
+    },
+    "log_4": {
+      "log message value": "API call #11: Response time: 50ms"
+    }
+  },
+  {
+    "span_id": "c901bb4d031e6045",
+    "func_full_name": "__main__.api_call",
+    "log_0": {
+      "log message value": "Making API call #12"
+    },
+    "log_1": {
+      "log message value": "API call #12: Request URL: https://api.example.com/data"
+    },
+    "log_2": {
+      "log message value": "API call #12: Request headers: Authorization: Bearer token123"
+    },
+    "log_3": {
+      "log message value": "API call #12: Success - Status 200"
+    },
+    "log_4": {
+      "log message value": "API call #12: Response time: 50ms"
+    }
+  },
+  {
+    "span_id": "acb2a0aaf8b61708",
+    "func_full_name": "__main__.process_data_batch",
+    "log_0": {
+      "log message value": "Processing batch #2"
+    },
+    "log_1": {
+      "log message value": "Batch #2: Size = 1000 items"
+    },
+    "log_2": {
+      "log message value": "Batch #2: Step 1/5 - Processing items 0 to 200"
+    },
+    "log_3": {
+      "log message value": "Batch #2: Step 2/5 - Processing items 200 to 400"
+    },
+    "log_4": {
+      "log message value": "Batch #2: Step 3/5 - Processing items 400 to 600"
+    },
+    "log_5": {
+      "log message value": "Batch #2: Step 4/5 - Processing items 600 to 800"
+    },
+    "log_6": {
+      "log message value": "Batch #2: Step 5/5 - Processing items 800 to 1000"
+    },
+    "log_7": {
+      "log message value": "Batch #2: Processing completed"
+    },
+    "log_8": {
+      "log message value": "Batch #2: Success rate: 98.5%"
+    }
+  },
+  {
+    "span_id": "9746ca39c63b1a3f",
+    "func_full_name": "__main__.api_call",
+    "log_0": {
+      "log message value": "Making API call #20"
+    },
+    "log_1": {
+      "log message value": "API call #20: Request URL: https://api.example.com/data"
+    },
+    "log_2": {
+      "log message value": "API call #20: Request headers: Authorization: Bearer token123"
+    },
+    "log_3": {
+      "log message value": "API call #20: Failed with status 500"
+    },
+    "log_4": {
+      "log message value": "API call #20: Error message: Internal Server Error"
+    },
+    "log_5": {
+      "log message value": "API call #20: Retrying..."
+    }
+  },
+  {
+    "span_id": "25c787b2cfdbde8f",
+    "func_full_name": "__main__.api_call",
+    "log_0": {
+      "log message value": "Making API call #21"
+    },
+    "log_1": {
+      "log message value": "API call #21: Request URL: https://api.example.com/data"
+    },
+    "log_2": {
+      "log message value": "API call #21: Request headers: Authorization: Bearer token123"
+    },
+    "log_3": {
+      "log message value": "API call #21: Failed with status 500"
+    },
+    "log_4": {
+      "log message value": "API call #21: Error message: Internal Server Error"
+    },
+    "log_5": {
+      "log message value": "API call #21: Retrying..."
+    }
+  },
+  {
+    "span_id": "cf88644ed0b276ba",
+    "func_full_name": "__main__.api_call",
+    "log_0": {
+      "log message value": "Making API call #22"
+    },
+    "log_1": {
+      "log message value": "API call #22: Request URL: https://api.example.com/data"
+    },
+    "log_2": {
+      "log message value": "API call #22: Request headers: Authorization: Bearer token123"
+    },
+    "log_3": {
+      "log message value": "API call #22: Success - Status 200"
+    },
+    "log_4": {
+      "log message value": "API call #22: Response time: 50ms"
+    }
+  },
+  {
+    "span_id": "38c651b28e7bf265",
+    "func_full_name": "__main__.sub_operation",
+    "log_0": {
+      "log message value": "Starting sub-operation #0"
+    },
+    "log_1": {
+      "log message value": "Sub-operation #0: Initializing resources"
+    },
+    "log_2": {
+      "log message value": "Sub-operation #0: Completed successfully"
+    }
+  },
+  {
+    "span_id": "32d9f3dd546b7f05",
+    "func_full_name": "__main__.validation_check",
+    "log_0": {
+      "log message value": "Running validation check #0"
+    },
+    "log_1": {
+      "log message value": "Check #0: Validating input schema"
+    },
+    "log_2": {
+      "log message value": "Check #0: Checking data integrity"
+    },
+    "log_3": {
+      "log message value": "Check #0: Verifying permissions"
+    },
+    "log_4": {
+      "log message value": "Check #0: All validations passed"
+    }
+  },
+  {
+    "span_id": "52dc9eb33969705f",
+    "func_full_name": "__main__.database_query",
+    "log_0": {
+      "log message value": "Starting database query #0"
+    },
+    "log_1": {
+      "log message value": "Query #0: SELECT * FROM users WHERE active = true"
+    },
+    "log_2": {
+      "log message value": "Query #0: Executed successfully"
+    },
+    "log_3": {
+      "log message value": "Query #0: Returned 150 rows"
+    },
+    "log_4": {
+      "log message value": "Query #0: Execution time: 0.1s"
+    }
+  },
+  {
+    "span_id": "98e23a09d8ff0ad2",
+    "func_full_name": "__main__.sub_operation",
+    "log_0": {
+      "log message value": "Starting sub-operation #1"
+    },
+    "log_1": {
+      "log message value": "Sub-operation #1: Initializing resources"
+    },
+    "log_2": {
+      "log message value": "Sub-operation #1: Completed successfully"
+    }
+  },
+  {
+    "span_id": "e284a7bb826cd241",
+    "func_full_name": "__main__.validation_check",
+    "log_0": {
+      "log message value": "Running validation check #1"
+    },
+    "log_1": {
+      "log message value": "Check #1: Validating input schema"
+    },
+    "log_2": {
+      "log message value": "Check #1: Checking data integrity"
+    },
+    "log_3": {
+      "log message value": "Check #1: Verifying permissions"
+    },
+    "log_4": {
+      "log message value": "Check #1: All validations passed"
+    }
+  },
+  {
+    "span_id": "e48ce72faffe61da",
+    "func_full_name": "__main__.database_query",
+    "log_0": {
+      "log message value": "Starting database query #1"
+    },
+    "log_1": {
+      "log message value": "Query #1: SELECT * FROM users WHERE active = true"
+    },
+    "log_2": {
+      "log message value": "Query #1: Executed successfully"
+    },
+    "log_3": {
+      "log message value": "Query #1: Returned 150 rows"
+    },
+    "log_4": {
+      "log message value": "Query #1: Execution time: 0.1s"
+    }
+  },
+  {
+    "span_id": "0e0fca573458bda6",
+    "func_full_name": "__main__.sub_operation",
+    "log_0": {
+      "log message value": "Starting sub-operation #2"
+    },
+    "log_1": {
+      "log message value": "Sub-operation #2: Initializing resources"
+    },
+    "log_2": {
+      "log message value": "Sub-operation #2: Completed successfully"
+    }
+  },
+  {
+    "span_id": "17929e4834707baa",
+    "func_full_name": "__main__.validation_check",
+    "log_0": {
+      "log message value": "Running validation check #2"
+    },
+    "log_1": {
+      "log message value": "Check #2: Validating input schema"
+    },
+    "log_2": {
+      "log message value": "Check #2: Checking data integrity"
+    },
+    "log_3": {
+      "log message value": "Check #2: Verifying permissions"
+    },
+    "log_4": {
+      "log message value": "Check #2: Found 2 minor validation warnings"
+    },
+    "log_5": {
+      "log message value": "Check #2: Field 'email' format suspicious"
+    }
+  },
+  {
+    "span_id": "83a46c6f78e8802d",
+    "func_full_name": "__main__.database_query",
+    "log_0": {
+      "log message value": "Starting database query #2"
+    },
+    "log_1": {
+      "log message value": "Query #2: SELECT * FROM users WHERE active = true"
+    },
+    "log_2": {
+      "log message value": "Query #2: Executed successfully"
+    },
+    "log_3": {
+      "log message value": "Query #2: Returned 150 rows"
+    },
+    "log_4": {
+      "log message value": "Query #2: Execution time: 0.1s"
+    }
+  },
+  {
+    "span_id": "0e793d9597b26df3",
+    "func_full_name": "__main__.sub_operation",
+    "log_0": {
+      "log message value": "Starting sub-operation #3"
+    },
+    "log_1": {
+      "log message value": "Sub-operation #3: Initializing resources"
+    },
+    "log_2": {
+      "log message value": "Sub-operation #3: Completed successfully"
+    }
+  },
+  {
+    "span_id": "3c028b06bd5c239d",
+    "func_full_name": "__main__.validation_check",
+    "log_0": {
+      "log message value": "Running validation check #3"
+    },
+    "log_1": {
+      "log message value": "Check #3: Validating input schema"
+    },
+    "log_2": {
+      "log message value": "Check #3: Checking data integrity"
+    },
+    "log_3": {
+      "log message value": "Check #3: Verifying permissions"
+    },
+    "log_4": {
+      "log message value": "Check #3: All validations passed"
+    }
+  },
+  {
+    "span_id": "991d8822b30ffe11",
+    "func_full_name": "__main__.database_query",
+    "log_0": {
+      "log message value": "Starting database query #3"
+    },
+    "log_1": {
+      "log message value": "Query #3: SELECT * FROM users WHERE active = true"
+    },
+    "log_2": {
+      "log message value": "Query #3: Executed successfully"
+    },
+    "log_3": {
+      "log message value": "Query #3: Returned 150 rows"
+    },
+    "log_4": {
+      "log message value": "Query #3: Execution time: 0.1s"
+    }
+  },
+  {
+    "span_id": "f9a8015558227081",
+    "func_full_name": "__main__.database_query",
+    "log_0": {
+      "log message value": "Starting database query #100"
+    },
+    "log_1": {
+      "log message value": "Query #100: SELECT * FROM users WHERE active = true"
+    },
+    "log_2": {
+      "log message value": "Query #100: Executed successfully"
+    },
+    "log_3": {
+      "log message value": "Query #100: Returned 150 rows"
+    },
+    "log_4": {
+      "log message value": "Query #100: Execution time: 0.1s"
+    }
+  },
+  {
+    "span_id": "ddaf11658c11dc4e",
+    "func_full_name": "__main__.database_query",
+    "log_0": {
+      "log message value": "Starting database query #101"
+    },
+    "log_1": {
+      "log message value": "Query #101: SELECT * FROM users WHERE active = true"
+    },
+    "log_2": {
+      "log message value": "Query #101: Executed successfully"
+    },
+    "log_3": {
+      "log message value": "Query #101: Returned 150 rows"
+    },
+    "log_4": {
+      "log message value": "Query #101: Execution time: 0.1s"
+    }
+  },
+  {
+    "span_id": "b4e1870c662b1213",
+    "func_full_name": "__main__.database_query",
+    "log_0": {
+      "log message value": "Starting database query #102"
+    },
+    "log_1": {
+      "log message value": "Query #102: SELECT * FROM users WHERE active = true"
+    },
+    "log_2": {
+      "log message value": "Query #102: Executed successfully"
+    },
+    "log_3": {
+      "log message value": "Query #102: Returned 150 rows"
+    },
+    "log_4": {
+      "log message value": "Query #102: Execution time: 0.1s"
+    }
+  },
+  {
+    "span_id": "30a65d47e2755049",
+    "func_full_name": "__main__.database_query",
+    "log_0": {
+      "log message value": "Starting database query #103"
+    },
+    "log_1": {
+      "log message value": "Query #103: SELECT * FROM users WHERE active = true"
+    },
+    "log_2": {
+      "log message value": "Query #103: Executed successfully"
+    },
+    "log_3": {
+      "log message value": "Query #103: Returned 150 rows"
+    },
+    "log_4": {
+      "log message value": "Query #103: Execution time: 0.1s"
+    }
+  },
+  {
+    "span_id": "618db39e71cf7272",
+    "func_full_name": "__main__.database_query",
+    "log_0": {
+      "log message value": "Starting database query #104"
+    },
+    "log_1": {
+      "log message value": "Query #104: SELECT * FROM users WHERE active = true"
+    },
+    "log_2": {
+      "log message value": "Query #104: Executed successfully"
+    },
+    "log_3": {
+      "log message value": "Query #104: Returned 150 rows"
+    },
+    "log_4": {
+      "log message value": "Query #104: Execution time: 0.1s"
+    }
+  },
+  {
+    "span_id": "f0423b0ec53023ef",
+    "func_full_name": "__main__.database_query",
+    "log_0": {
+      "log message value": "Starting database query #105"
+    },
+    "log_1": {
+      "log message value": "Query #105: SELECT * FROM users WHERE active = true"
+    },
+    "log_2": {
+      "log message value": "Query #105: Executed successfully"
+    },
+    "log_3": {
+      "log message value": "Query #105: Returned 150 rows"
+    },
+    "log_4": {
+      "log message value": "Query #105: Execution time: 0.1s"
+    }
+  },
+  {
+    "span_id": "9f1c5ad358e93279",
+    "func_full_name": "__main__.database_query",
+    "log_0": {
+      "log message value": "Starting database query #106"
+    },
+    "log_1": {
+      "log message value": "Query #106: SELECT * FROM users WHERE active = true"
+    },
+    "log_2": {
+      "log message value": "Query #106: Executed successfully"
+    },
+    "log_3": {
+      "log message value": "Query #106: Returned 150 rows"
+    },
+    "log_4": {
+      "log message value": "Query #106: Execution time: 0.1s"
+    }
+  },
+  {
+    "span_id": "c2869d34262c0930",
+    "func_full_name": "__main__.database_query",
+    "log_0": {
+      "log message value": "Starting database query #107"
+    },
+    "log_1": {
+      "log message value": "Query #107: SELECT * FROM users WHERE active = true"
+    },
+    "log_2": {
+      "log message value": "Query #107: Executed successfully"
+    },
+    "log_3": {
+      "log message value": "Query #107: Returned 150 rows"
+    },
+    "log_4": {
+      "log message value": "Query #107: Execution time: 0.1s"
+    }
+  },
+  {
+    "span_id": "76cd67494c352c1c",
+    "func_full_name": "__main__.database_query",
+    "log_0": {
+      "log message value": "Starting database query #108"
+    },
+    "log_1": {
+      "log message value": "Query #108: SELECT * FROM users WHERE active = true"
+    },
+    "log_2": {
+      "log message value": "Query #108: Executed successfully"
+    },
+    "log_3": {
+      "log message value": "Query #108: Returned 150 rows"
+    },
+    "log_4": {
+      "log message value": "Query #108: Execution time: 0.1s"
+    }
+  },
+  {
+    "span_id": "a235560a5a159dcf",
+    "func_full_name": "__main__.database_query",
+    "log_0": {
+      "log message value": "Starting database query #109"
+    },
+    "log_1": {
+      "log message value": "Query #109: SELECT * FROM users WHERE active = true"
+    },
+    "log_2": {
+      "log message value": "Query #109: Executed successfully"
+    },
+    "log_3": {
+      "log message value": "Query #109: Returned 150 rows"
+    },
+    "log_4": {
+      "log message value": "Query #109: Execution time: 0.1s"
+    }
+  },
+  {
+    "span_id": "141e3ba55c4457af",
+    "func_full_name": "__main__.api_call",
+    "log_0": {
+      "log message value": "Making API call #200"
+    },
+    "log_1": {
+      "log message value": "API call #200: Request URL: https://api.example.com/data"
+    },
+    "log_2": {
+      "log message value": "API call #200: Request headers: Authorization: Bearer token123"
+    },
+    "log_3": {
+      "log message value": "API call #200: Failed with status 500"
+    },
+    "log_4": {
+      "log message value": "API call #200: Error message: Internal Server Error"
+    },
+    "log_5": {
+      "log message value": "API call #200: Retrying..."
+    }
+  },
+  {
+    "span_id": "15a2bd44bfed7b6f",
+    "func_full_name": "__main__.api_call",
+    "log_0": {
+      "log message value": "Making API call #201"
+    },
+    "log_1": {
+      "log message value": "API call #201: Request URL: https://api.example.com/data"
+    },
+    "log_2": {
+      "log message value": "API call #201: Request headers: Authorization: Bearer token123"
+    },
+    "log_3": {
+      "log message value": "API call #201: Slow response - took 150ms"
+    },
+    "log_4": {
+      "log message value": "API call #201: Status 200 but performance degraded"
+    }
+  },
+  {
+    "span_id": "fca915b4ac177607",
+    "func_full_name": "__main__.api_call",
+    "log_0": {
+      "log message value": "Making API call #202"
+    },
+    "log_1": {
+      "log message value": "API call #202: Request URL: https://api.example.com/data"
+    },
+    "log_2": {
+      "log message value": "API call #202: Request headers: Authorization: Bearer token123"
+    },
+    "log_3": {
+      "log message value": "API call #202: Success - Status 200"
+    },
+    "log_4": {
+      "log message value": "API call #202: Response time: 50ms"
+    }
+  },
+  {
+    "span_id": "83abdaff99e69264",
+    "func_full_name": "__main__.api_call",
+    "log_0": {
+      "log message value": "Making API call #203"
+    },
+    "log_1": {
+      "log message value": "API call #203: Request URL: https://api.example.com/data"
+    },
+    "log_2": {
+      "log message value": "API call #203: Request headers: Authorization: Bearer token123"
+    },
+    "log_3": {
+      "log message value": "API call #203: Slow response - took 150ms"
+    },
+    "log_4": {
+      "log message value": "API call #203: Status 200 but performance degraded"
+    }
+  },
+  {
+    "span_id": "5decdc421899b59b",
+    "func_full_name": "__main__.api_call",
+    "log_0": {
+      "log message value": "Making API call #204"
+    },
+    "log_1": {
+      "log message value": "API call #204: Request URL: https://api.example.com/data"
+    },
+    "log_2": {
+      "log message value": "API call #204: Request headers: Authorization: Bearer token123"
+    },
+    "log_3": {
+      "log message value": "API call #204: Slow response - took 150ms"
+    },
+    "log_4": {
+      "log message value": "API call #204: Status 200 but performance degraded"
+    }
+  },
+  {
+    "span_id": "3c17fb62645b0e39",
+    "func_full_name": "__main__.api_call",
+    "log_0": {
+      "log message value": "Making API call #205"
+    },
+    "log_1": {
+      "log message value": "API call #205: Request URL: https://api.example.com/data"
+    },
+    "log_2": {
+      "log message value": "API call #205: Request headers: Authorization: Bearer token123"
+    },
+    "log_3": {
+      "log message value": "API call #205: Failed with status 500"
+    },
+    "log_4": {
+      "log message value": "API call #205: Error message: Internal Server Error"
+    },
+    "log_5": {
+      "log message value": "API call #205: Retrying..."
+    }
+  },
+  {
+    "span_id": "c9863218f086fb55",
+    "func_full_name": "__main__.api_call",
+    "log_0": {
+      "log message value": "Making API call #206"
+    },
+    "log_1": {
+      "log message value": "API call #206: Request URL: https://api.example.com/data"
+    },
+    "log_2": {
+      "log message value": "API call #206: Request headers: Authorization: Bearer token123"
+    },
+    "log_3": {
+      "log message value": "API call #206: Success - Status 200"
+    },
+    "log_4": {
+      "log message value": "API call #206: Response time: 50ms"
+    }
+  },
+  {
+    "span_id": "9296e36071117183",
+    "func_full_name": "__main__.api_call",
+    "log_0": {
+      "log message value": "Making API call #207"
+    },
+    "log_1": {
+      "log message value": "API call #207: Request URL: https://api.example.com/data"
+    },
+    "log_2": {
+      "log message value": "API call #207: Request headers: Authorization: Bearer token123"
+    },
+    "log_3": {
+      "log message value": "API call #207: Slow response - took 150ms"
+    },
+    "log_4": {
+      "log message value": "API call #207: Status 200 but performance degraded"
+    }
+  }
+]
+----------------------------------------
+================================================================================

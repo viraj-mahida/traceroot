@@ -47,9 +47,41 @@ class JaegerTraceClient(TraceClient):
         values: list[str] | None = None,
         operations: list[str] | None = None,
     ) -> Trace | None:
-        """Get a single trace by ID - not implemented for Jaeger yet."""
-        # TODO: Implement for Jaeger
-        return None
+        """Get a single trace by ID from Jaeger.
+        
+        Args:
+            trace_id: The trace ID to fetch
+            categories: Filter by categories (not used for single trace fetch)
+            values: Filter by values (not used for single trace fetch)
+            operations: Filter operations (not used for single trace fetch)
+            
+        Returns:
+            Trace object if found, None otherwise
+        """
+        try:
+            # Fetch the trace from Jaeger API
+            url = f"{self.traces_url}/{trace_id}"
+            response = await self._make_request(url)
+            
+            if not response or "data" not in response:
+                print(f"No trace data found for trace ID: {trace_id}")
+                return None
+            
+            trace_data_list = response["data"]
+            if not trace_data_list:
+                print(f"Empty trace data for trace ID: {trace_id}")
+                return None
+            
+            # Jaeger returns a list, but we expect only one trace
+            trace_data = trace_data_list[0]
+            
+            # Convert to our Trace model
+            trace = await self._convert_jaeger_trace_to_trace(trace_data)
+            return trace
+            
+        except Exception as e:
+            print(f"Error getting trace by ID {trace_id}: {e}")
+            return None
 
     async def get_recent_traces(
         self,

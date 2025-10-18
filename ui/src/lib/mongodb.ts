@@ -9,7 +9,8 @@ const IS_LOCAL_MODE = process.env.NEXT_PUBLIC_LOCAL_MODE === "true";
 // Construct MongoDB URI from credentials (matching backend pattern)
 let MONGODB_URI = "";
 if (DB_USER_NAME && DB_PASSWORD && DB_NAME) {
-  MONGODB_URI = `mongodb+srv://${DB_USER_NAME}:${DB_PASSWORD}@cluster0.fgwxdgl.mongodb.net/${DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`;
+  // MONGODB_URI = `mongodb+srv://${DB_USER_NAME}:${DB_PASSWORD}@cluster0.fgwxdgl.mongodb.net/${DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`;
+  MONGODB_URI = `mongodb+srv://${DB_USER_NAME}:${DB_PASSWORD}@cluster0.82b47cy.mongodb.net/${DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`;
 }
 
 if (!MONGODB_URI && process.env.NODE_ENV === "production") {

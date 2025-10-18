@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-sts": "^3.907.0",
     "@clerk/nextjs": "^6.25.4",
     "@icons-pack/react-simple-icons": "^13.7.0",
     "@lobehub/icons": "^2.26.0",
@@ -55,6 +56,7 @@
     "remark-math": "^6.0.0",
     "shiki": "^3.12.2",
     "stripe": "^18.3.0",
+    "svix": "^1.48.0",
     "tailwind-merge": "^3.3.1",
     "ts-key-enum": "^3.0.13",
     "use-stick-to-bottom": "^1.1.1"
