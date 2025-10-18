@@ -1,0 +1,1125 @@
+{
+  "span_id": "8dbf6edd8d9ab2e2",
+  "func_full_name": "test_suite_execution",
+  "span utc start time": "2025-10-18 13:42:24.282173+00:00",
+  "span utc end time": "2025-10-18 13:42:28.471867+00:00",
+  "2a0b90d634bbb628": {
+    "span_id": "2a0b90d634bbb628",
+    "func_full_name": "tiny_span",
+    "span utc start time": "2025-10-18 13:42:24.282305+00:00",
+    "span utc end time": "2025-10-18 13:42:24.292533+00:00",
+    "log_0": {
+      "log utc timestamp": "2025-10-18 13:42:24.282334+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    }
+  },
+  "0b8f6007d48b6a91": {
+    "span_id": "0b8f6007d48b6a91",
+    "func_full_name": "small_nested_span",
+    "span utc start time": "2025-10-18 13:42:24.793765+00:00",
+    "span utc end time": "2025-10-18 13:42:24.824520+00:00",
+    "log_0": {
+      "log utc timestamp": "2025-10-18 13:42:24.793827+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "b8d5f26c3f8c3e00": {
+      "span_id": "b8d5f26c3f8c3e00",
+      "func_full_name": "small_nested_child",
+      "span utc start time": "2025-10-18 13:42:24.793922+00:00",
+      "span utc end time": "2025-10-18 13:42:24.814186+00:00",
+      "log_0": {
+        "log utc timestamp": "2025-10-18 13:42:24.793981+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_1": {
+        "log utc timestamp": "2025-10-18 13:42:24.794001+00:00",
+        "log level": "DEBUG",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      }
+    },
+    "log_1": {
+      "log utc timestamp": "2025-10-18 13:42:24.814347+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    }
+  },
+  "aa1024252349226d": {
+    "span_id": "aa1024252349226d",
+    "func_full_name": "medium_nested_span",
+    "span utc start time": "2025-10-18 13:42:25.325012+00:00",
+    "span utc end time": "2025-10-18 13:42:25.599118+00:00",
+    "log_0": {
+      "log utc timestamp": "2025-10-18 13:42:25.325093+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_1": {
+      "log utc timestamp": "2025-10-18 13:42:25.325120+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "2fe9f7daef7de5d1": {
+      "span_id": "2fe9f7daef7de5d1",
+      "func_full_name": "validate_input",
+      "span utc start time": "2025-10-18 13:42:25.325167+00:00",
+      "span utc end time": "2025-10-18 13:42:25.345374+00:00",
+      "log_0": {
+        "log utc timestamp": "2025-10-18 13:42:25.325186+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_1": {
+        "log utc timestamp": "2025-10-18 13:42:25.325201+00:00",
+        "log level": "DEBUG",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_2": {
+        "log utc timestamp": "2025-10-18 13:42:25.325210+00:00",
+        "log level": "DEBUG",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_3": {
+        "log utc timestamp": "2025-10-18 13:42:25.325217+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      }
+    },
+    "log_2": {
+      "log utc timestamp": "2025-10-18 13:42:25.345538+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "350548cf2d20121d": {
+      "span_id": "350548cf2d20121d",
+      "func_full_name": "process_item_0",
+      "span utc start time": "2025-10-18 13:42:25.345713+00:00",
+      "span utc end time": "2025-10-18 13:42:25.426258+00:00",
+      "log_0": {
+        "log utc timestamp": "2025-10-18 13:42:25.345746+00:00",
+        "log level": "DEBUG",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_1": {
+        "log utc timestamp": "2025-10-18 13:42:25.345755+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_2": {
+        "log utc timestamp": "2025-10-18 13:42:25.395928+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_3": {
+        "log utc timestamp": "2025-10-18 13:42:25.395956+00:00",
+        "log level": "DEBUG",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_4": {
+        "log utc timestamp": "2025-10-18 13:42:25.426198+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      }
+    },
+    "c50e0ceeb4015946": {
+      "span_id": "c50e0ceeb4015946",
+      "func_full_name": "process_item_1",
+      "span utc start time": "2025-10-18 13:42:25.426491+00:00",
+      "span utc end time": "2025-10-18 13:42:25.507479+00:00",
+      "log_0": {
+        "log utc timestamp": "2025-10-18 13:42:25.426540+00:00",
+        "log level": "DEBUG",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_1": {
+        "log utc timestamp": "2025-10-18 13:42:25.426557+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_2": {
+        "log utc timestamp": "2025-10-18 13:42:25.477217+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_3": {
+        "log utc timestamp": "2025-10-18 13:42:25.477250+00:00",
+        "log level": "DEBUG",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_4": {
+        "log utc timestamp": "2025-10-18 13:42:25.507423+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      }
+    },
+    "365c12e5cd564eca": {
+      "span_id": "365c12e5cd564eca",
+      "func_full_name": "process_item_2",
+      "span utc start time": "2025-10-18 13:42:25.507677+00:00",
+      "span utc end time": "2025-10-18 13:42:25.588796+00:00",
+      "log_0": {
+        "log utc timestamp": "2025-10-18 13:42:25.507705+00:00",
+        "log level": "DEBUG",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_1": {
+        "log utc timestamp": "2025-10-18 13:42:25.507715+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_2": {
+        "log utc timestamp": "2025-10-18 13:42:25.557912+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_3": {
+        "log utc timestamp": "2025-10-18 13:42:25.557945+00:00",
+        "log level": "DEBUG",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_4": {
+        "log utc timestamp": "2025-10-18 13:42:25.588735+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      }
+    },
+    "log_3": {
+      "log utc timestamp": "2025-10-18 13:42:25.588876+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_4": {
+      "log utc timestamp": "2025-10-18 13:42:25.588895+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    }
+  },
+  "d76b689c0d322e1d": {
+    "span_id": "d76b689c0d322e1d",
+    "func_full_name": "large_span_many_logs",
+    "span utc start time": "2025-10-18 13:42:26.099719+00:00",
+    "span utc end time": "2025-10-18 13:42:26.201633+00:00",
+    "log_0": {
+      "log utc timestamp": "2025-10-18 13:42:26.099792+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_1": {
+      "log utc timestamp": "2025-10-18 13:42:26.099821+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_2": {
+      "log utc timestamp": "2025-10-18 13:42:26.099835+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_3": {
+      "log utc timestamp": "2025-10-18 13:42:26.099850+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_4": {
+      "log utc timestamp": "2025-10-18 13:42:26.099864+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_5": {
+      "log utc timestamp": "2025-10-18 13:42:26.099880+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_6": {
+      "log utc timestamp": "2025-10-18 13:42:26.099893+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_7": {
+      "log utc timestamp": "2025-10-18 13:42:26.099906+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_8": {
+      "log utc timestamp": "2025-10-18 13:42:26.099920+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_9": {
+      "log utc timestamp": "2025-10-18 13:42:26.099933+00:00",
+      "log level": "WARNING",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_10": {
+      "log utc timestamp": "2025-10-18 13:42:26.099946+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_11": {
+      "log utc timestamp": "2025-10-18 13:42:26.099958+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_12": {
+      "log utc timestamp": "2025-10-18 13:42:26.099982+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_13": {
+      "log utc timestamp": "2025-10-18 13:42:26.120237+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_14": {
+      "log utc timestamp": "2025-10-18 13:42:26.120277+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_15": {
+      "log utc timestamp": "2025-10-18 13:42:26.140486+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_16": {
+      "log utc timestamp": "2025-10-18 13:42:26.140525+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_17": {
+      "log utc timestamp": "2025-10-18 13:42:26.160725+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_18": {
+      "log utc timestamp": "2025-10-18 13:42:26.160763+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_19": {
+      "log utc timestamp": "2025-10-18 13:42:26.180969+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_20": {
+      "log utc timestamp": "2025-10-18 13:42:26.181002+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_21": {
+      "log utc timestamp": "2025-10-18 13:42:26.201293+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_22": {
+      "log utc timestamp": "2025-10-18 13:42:26.201331+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_23": {
+      "log utc timestamp": "2025-10-18 13:42:26.201345+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_24": {
+      "log utc timestamp": "2025-10-18 13:42:26.201360+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_25": {
+      "log utc timestamp": "2025-10-18 13:42:26.201374+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_26": {
+      "log utc timestamp": "2025-10-18 13:42:26.201387+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_27": {
+      "log utc timestamp": "2025-10-18 13:42:26.201400+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_28": {
+      "log utc timestamp": "2025-10-18 13:42:26.201412+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_29": {
+      "log utc timestamp": "2025-10-18 13:42:26.201424+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_30": {
+      "log utc timestamp": "2025-10-18 13:42:26.201437+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_31": {
+      "log utc timestamp": "2025-10-18 13:42:26.201449+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_32": {
+      "log utc timestamp": "2025-10-18 13:42:26.201500+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_33": {
+      "log utc timestamp": "2025-10-18 13:42:26.201521+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_34": {
+      "log utc timestamp": "2025-10-18 13:42:26.201563+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    }
+  },
+  "1c0f84d6228f1b58": {
+    "span_id": "1c0f84d6228f1b58",
+    "func_full_name": "deep_nesting",
+    "span utc start time": "2025-10-18 13:42:26.702304+00:00",
+    "span utc end time": "2025-10-18 13:42:26.733654+00:00",
+    "log_0": {
+      "log utc timestamp": "2025-10-18 13:42:26.702406+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_1": {
+      "log utc timestamp": "2025-10-18 13:42:26.702442+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "b0744ab696673dab": {
+      "span_id": "b0744ab696673dab",
+      "func_full_name": "level_2_processing",
+      "span utc start time": "2025-10-18 13:42:26.702540+00:00",
+      "span utc end time": "2025-10-18 13:42:26.733595+00:00",
+      "log_0": {
+        "log utc timestamp": "2025-10-18 13:42:26.702587+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_1": {
+        "log utc timestamp": "2025-10-18 13:42:26.702611+00:00",
+        "log level": "DEBUG",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "923594fc18fcb66e": {
+        "span_id": "923594fc18fcb66e",
+        "func_full_name": "level_3_sub_operation",
+        "span utc start time": "2025-10-18 13:42:26.712919+00:00",
+        "span utc end time": "2025-10-18 13:42:26.733547+00:00",
+        "log_0": {
+          "log utc timestamp": "2025-10-18 13:42:26.712987+00:00",
+          "log level": "INFO",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        },
+        "log_1": {
+          "log utc timestamp": "2025-10-18 13:42:26.713013+00:00",
+          "log level": "DEBUG",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        },
+        "3c679d7ea07cd166": {
+          "span_id": "3c679d7ea07cd166",
+          "func_full_name": "level_4_deepest",
+          "span utc start time": "2025-10-18 13:42:26.713133+00:00",
+          "span utc end time": "2025-10-18 13:42:26.733446+00:00",
+          "log_0": {
+            "log utc timestamp": "2025-10-18 13:42:26.713174+00:00",
+            "log level": "DEBUG",
+            "file name": "",
+            "function name": "",
+            "log message value": ""
+          },
+          "log_1": {
+            "log utc timestamp": "2025-10-18 13:42:26.713195+00:00",
+            "log level": "INFO",
+            "file name": "",
+            "function name": "",
+            "log message value": ""
+          },
+          "log_2": {
+            "log utc timestamp": "2025-10-18 13:42:26.733386+00:00",
+            "log level": "INFO",
+            "file name": "",
+            "function name": "",
+            "log message value": ""
+          }
+        },
+        "log_2": {
+          "log utc timestamp": "2025-10-18 13:42:26.733525+00:00",
+          "log level": "INFO",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        }
+      },
+      "log_2": {
+        "log utc timestamp": "2025-10-18 13:42:26.733577+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      }
+    },
+    "log_2": {
+      "log utc timestamp": "2025-10-18 13:42:26.733620+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_3": {
+      "log utc timestamp": "2025-10-18 13:42:26.733636+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    }
+  }
+}
+================================================================================
+{
+  "_parent_context": {
+    "span_id": "8dbf6edd8d9ab2e2",
+    "func_full_name": "test_suite_execution"
+  },
+  "b542f822167882bd": {
+    "span_id": "b542f822167882bd",
+    "func_full_name": "multiple_children",
+    "span utc start time": "2025-10-18 13:42:27.234230+00:00",
+    "span utc end time": "2025-10-18 13:42:27.346589+00:00",
+    "log_0": {
+      "log utc timestamp": "2025-10-18 13:42:27.234306+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_1": {
+      "log utc timestamp": "2025-10-18 13:42:27.234331+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "ec61887b76614ac1": {
+      "span_id": "ec61887b76614ac1",
+      "func_full_name": "sibling_auth",
+      "span utc start time": "2025-10-18 13:42:27.234400+00:00",
+      "span utc end time": "2025-10-18 13:42:27.264713+00:00",
+      "log_0": {
+        "log utc timestamp": "2025-10-18 13:42:27.234436+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_1": {
+        "log utc timestamp": "2025-10-18 13:42:27.234454+00:00",
+        "log level": "DEBUG",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_2": {
+        "log utc timestamp": "2025-10-18 13:42:27.264655+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      }
+    },
+    "a6a2c3dcfc575202": {
+      "span_id": "a6a2c3dcfc575202",
+      "func_full_name": "sibling_authorization",
+      "span utc start time": "2025-10-18 13:42:27.264945+00:00",
+      "span utc end time": "2025-10-18 13:42:27.285564+00:00",
+      "log_0": {
+        "log utc timestamp": "2025-10-18 13:42:27.264994+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_1": {
+        "log utc timestamp": "2025-10-18 13:42:27.265013+00:00",
+        "log level": "DEBUG",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_2": {
+        "log utc timestamp": "2025-10-18 13:42:27.265028+00:00",
+        "log level": "DEBUG",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_3": {
+        "log utc timestamp": "2025-10-18 13:42:27.285524+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      }
+    },
+    "51a0c050e2d6d25f": {
+      "span_id": "51a0c050e2d6d25f",
+      "func_full_name": "sibling_data_fetch",
+      "span utc start time": "2025-10-18 13:42:27.285720+00:00",
+      "span utc end time": "2025-10-18 13:42:27.325995+00:00",
+      "log_0": {
+        "log utc timestamp": "2025-10-18 13:42:27.285766+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_1": {
+        "log utc timestamp": "2025-10-18 13:42:27.285776+00:00",
+        "log level": "DEBUG",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_2": {
+        "log utc timestamp": "2025-10-18 13:42:27.325943+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      }
+    },
+    "278085a504d3864f": {
+      "span_id": "278085a504d3864f",
+      "func_full_name": "sibling_cache_update",
+      "span utc start time": "2025-10-18 13:42:27.326182+00:00",
+      "span utc end time": "2025-10-18 13:42:27.346461+00:00",
+      "log_0": {
+        "log utc timestamp": "2025-10-18 13:42:27.326211+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_1": {
+        "log utc timestamp": "2025-10-18 13:42:27.326222+00:00",
+        "log level": "DEBUG",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_2": {
+        "log utc timestamp": "2025-10-18 13:42:27.326230+00:00",
+        "log level": "DEBUG",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "log_3": {
+        "log utc timestamp": "2025-10-18 13:42:27.346405+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      }
+    },
+    "log_2": {
+      "log utc timestamp": "2025-10-18 13:42:27.346547+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_3": {
+      "log utc timestamp": "2025-10-18 13:42:27.346566+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    }
+  }
+}
+================================================================================
+{
+  "span_id": "8dbf6edd8d9ab2e2",
+  "func_full_name": "test_suite_execution",
+  "span utc start time": "2025-10-18 13:42:24.282173+00:00",
+  "span utc end time": "2025-10-18 13:42:28.471867+00:00",
+  "8cd010fca08ede64": {
+    "span_id": "8cd010fca08ede64",
+    "func_full_name": "complex_nested_subsystems",
+    "span utc start time": "2025-10-18 13:42:27.849481+00:00",
+    "span utc end time": "2025-10-18 13:42:27.971495+00:00",
+    "log_0": {
+      "log utc timestamp": "2025-10-18 13:42:27.849566+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_1": {
+      "log utc timestamp": "2025-10-18 13:42:27.849598+00:00",
+      "log level": "DEBUG",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_2": {
+      "log utc timestamp": "2025-10-18 13:42:27.849616+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "ade021b8d4d71cbe": {
+      "span_id": "ade021b8d4d71cbe",
+      "func_full_name": "api_gateway_subsystem",
+      "span utc start time": "2025-10-18 13:42:27.849688+00:00",
+      "span utc end time": "2025-10-18 13:42:27.870995+00:00",
+      "log_0": {
+        "log utc timestamp": "2025-10-18 13:42:27.849731+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "b28ae5af43388ef2": {
+        "span_id": "b28ae5af43388ef2",
+        "func_full_name": "api_validate",
+        "span utc start time": "2025-10-18 13:42:27.849780+00:00",
+        "span utc end time": "2025-10-18 13:42:27.860057+00:00",
+        "log_0": {
+          "log utc timestamp": "2025-10-18 13:42:27.849807+00:00",
+          "log level": "INFO",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        },
+        "log_1": {
+          "log utc timestamp": "2025-10-18 13:42:27.849824+00:00",
+          "log level": "DEBUG",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        },
+        "log_2": {
+          "log utc timestamp": "2025-10-18 13:42:27.849851+00:00",
+          "log level": "DEBUG",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        },
+        "log_3": {
+          "log utc timestamp": "2025-10-18 13:42:27.849875+00:00",
+          "log level": "INFO",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        }
+      },
+      "cf93fa73ea4c8ac4": {
+        "span_id": "cf93fa73ea4c8ac4",
+        "func_full_name": "api_rate_limit",
+        "span utc start time": "2025-10-18 13:42:27.860391+00:00",
+        "span utc end time": "2025-10-18 13:42:27.870801+00:00",
+        "log_0": {
+          "log utc timestamp": "2025-10-18 13:42:27.860461+00:00",
+          "log level": "INFO",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        },
+        "log_1": {
+          "log utc timestamp": "2025-10-18 13:42:27.860491+00:00",
+          "log level": "DEBUG",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        },
+        "log_2": {
+          "log utc timestamp": "2025-10-18 13:42:27.860508+00:00",
+          "log level": "INFO",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        }
+      },
+      "log_1": {
+        "log utc timestamp": "2025-10-18 13:42:27.870958+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      }
+    },
+    "log_3": {
+      "log utc timestamp": "2025-10-18 13:42:27.871031+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "14b7603e828a1d63": {
+      "span_id": "14b7603e828a1d63",
+      "func_full_name": "cache_subsystem",
+      "span utc start time": "2025-10-18 13:42:27.871233+00:00",
+      "span utc end time": "2025-10-18 13:42:27.905966+00:00",
+      "log_0": {
+        "log utc timestamp": "2025-10-18 13:42:27.871277+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "a9d7dfb48710476a": {
+        "span_id": "a9d7dfb48710476a",
+        "func_full_name": "cache_check",
+        "span utc start time": "2025-10-18 13:42:27.871341+00:00",
+        "span utc end time": "2025-10-18 13:42:27.885215+00:00",
+        "log_0": {
+          "log utc timestamp": "2025-10-18 13:42:27.871375+00:00",
+          "log level": "DEBUG",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        },
+        "log_1": {
+          "log utc timestamp": "2025-10-18 13:42:27.871388+00:00",
+          "log level": "INFO",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        }
+      },
+      "e3f0db9d5c860bee": {
+        "span_id": "e3f0db9d5c860bee",
+        "func_full_name": "cache_set",
+        "span utc start time": "2025-10-18 13:42:27.885527+00:00",
+        "span utc end time": "2025-10-18 13:42:27.905869+00:00",
+        "log_0": {
+          "log utc timestamp": "2025-10-18 13:42:27.885602+00:00",
+          "log level": "INFO",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        },
+        "log_1": {
+          "log utc timestamp": "2025-10-18 13:42:27.885625+00:00",
+          "log level": "DEBUG",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        },
+        "log_2": {
+          "log utc timestamp": "2025-10-18 13:42:27.905812+00:00",
+          "log level": "INFO",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        }
+      },
+      "log_1": {
+        "log utc timestamp": "2025-10-18 13:42:27.905945+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      }
+    },
+    "log_4": {
+      "log utc timestamp": "2025-10-18 13:42:27.906000+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "1501494d4982be42": {
+      "span_id": "1501494d4982be42",
+      "func_full_name": "db_subsystem_users",
+      "span utc start time": "2025-10-18 13:42:27.906176+00:00",
+      "span utc end time": "2025-10-18 13:42:27.947372+00:00",
+      "log_0": {
+        "log utc timestamp": "2025-10-18 13:42:27.906251+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "76d1cf585e735cf7": {
+        "span_id": "76d1cf585e735cf7",
+        "func_full_name": "db_pool_acquire",
+        "span utc start time": "2025-10-18 13:42:27.906330+00:00",
+        "span utc end time": "2025-10-18 13:42:27.916559+00:00",
+        "log_0": {
+          "log utc timestamp": "2025-10-18 13:42:27.906365+00:00",
+          "log level": "DEBUG",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        },
+        "log_1": {
+          "log utc timestamp": "2025-10-18 13:42:27.906377+00:00",
+          "log level": "INFO",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        }
+      },
+      "1632b0062822971c": {
+        "span_id": "1632b0062822971c",
+        "func_full_name": "db_execute_query",
+        "span utc start time": "2025-10-18 13:42:27.916836+00:00",
+        "span utc end time": "2025-10-18 13:42:27.947273+00:00",
+        "log_0": {
+          "log utc timestamp": "2025-10-18 13:42:27.916907+00:00",
+          "log level": "INFO",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        },
+        "log_1": {
+          "log utc timestamp": "2025-10-18 13:42:27.916930+00:00",
+          "log level": "DEBUG",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        },
+        "log_2": {
+          "log utc timestamp": "2025-10-18 13:42:27.947207+00:00",
+          "log level": "INFO",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        }
+      },
+      "log_1": {
+        "log utc timestamp": "2025-10-18 13:42:27.947353+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      }
+    },
+    "log_5": {
+      "log utc timestamp": "2025-10-18 13:42:27.947402+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "b0357d9aff2b8621": {
+      "span_id": "b0357d9aff2b8621",
+      "func_full_name": "business_logic_subsystem",
+      "span utc start time": "2025-10-18 13:42:27.947550+00:00",
+      "span utc end time": "2025-10-18 13:42:27.971431+00:00",
+      "log_0": {
+        "log utc timestamp": "2025-10-18 13:42:27.947591+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      },
+      "1ffeb9191095c5b5": {
+        "span_id": "1ffeb9191095c5b5",
+        "func_full_name": "business_calculate",
+        "span utc start time": "2025-10-18 13:42:27.947689+00:00",
+        "span utc end time": "2025-10-18 13:42:27.971315+00:00",
+        "log_0": {
+          "log utc timestamp": "2025-10-18 13:42:27.947733+00:00",
+          "log level": "INFO",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        },
+        "log_1": {
+          "log utc timestamp": "2025-10-18 13:42:27.947748+00:00",
+          "log level": "DEBUG",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        },
+        "log_2": {
+          "log utc timestamp": "2025-10-18 13:42:27.947762+00:00",
+          "log level": "DEBUG",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        },
+        "log_3": {
+          "log utc timestamp": "2025-10-18 13:42:27.971244+00:00",
+          "log level": "INFO",
+          "file name": "",
+          "function name": "",
+          "log message value": ""
+        }
+      },
+      "log_1": {
+        "log utc timestamp": "2025-10-18 13:42:27.971410+00:00",
+        "log level": "INFO",
+        "file name": "",
+        "function name": "",
+        "log message value": ""
+      }
+    },
+    "log_6": {
+      "log utc timestamp": "2025-10-18 13:42:27.971459+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    },
+    "log_7": {
+      "log utc timestamp": "2025-10-18 13:42:27.971475+00:00",
+      "log level": "INFO",
+      "file name": "",
+      "function name": "",
+      "log message value": ""
+    }
+  }
+}
+================================================================================
