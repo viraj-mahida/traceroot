@@ -85,12 +85,6 @@ export function LogProviderTabContent() {
   // Load saved data from API and localStorage on component mount
   useEffect(() => {
     const loadConfig = async () => {
-      const userEmail = getUserEmail();
-      if (!userEmail) {
-        setIsLoaded(true);
-        return;
-      }
-
       try {
         // Load selected provider from localStorage first
         const savedSelection = loadProviderSelection(
@@ -148,10 +142,8 @@ export function LogProviderTabContent() {
           return "aws";
         };
 
-        // Try to fetch from API - server will tell us if MongoDB is available
-        const response = await fetch(
-          `/api/provider-config?userEmail=${encodeURIComponent(userEmail)}`,
-        );
+        // Try to fetch from API - server will get userEmail from Clerk auth
+        const response = await fetch(`/api/provider-config`);
         const data = await response.json();
 
         if (response.ok) {
@@ -381,6 +373,7 @@ export function LogProviderTabContent() {
     { value: "ap-shanghai", label: "Shanghai (ap-shanghai)" },
     { value: "ap-guangzhou", label: "Guangzhou (ap-guangzhou)" },
     { value: "ap-singapore", label: "Singapore (ap-singapore)" },
+    { value: "na-siliconvalley", label: "Silicon Valley (na-siliconvalley)" },
   ];
 
   // Check if there's any data entered for the current provider
@@ -432,12 +425,6 @@ export function LogProviderTabContent() {
   };
 
   const handleSaveConfirm = async () => {
-    const userEmail = getUserEmail();
-    if (!userEmail) {
-      setShowSaveDialog(false);
-      return;
-    }
-
     try {
       setIsSaving(true);
 
@@ -509,8 +496,8 @@ export function LogProviderTabContent() {
       }
 
       // Save to MongoDB
+      // Note: userEmail is no longer sent - API will get it from Clerk auth
       const payload: any = {
-        userEmail,
         logProvider: selectedProvider,
         ...configData,
       };
@@ -526,7 +513,10 @@ export function LogProviderTabContent() {
       const data = await response.json();
 
       if (!response.ok) {
-        console.error("Failed to save configuration:", data.error);
+        console.error(
+          "❌ [Frontend] Failed to save configuration:",
+          data.error,
+        );
       } else {
         // Update initial values after successful save
         setInitialValues({
@@ -560,12 +550,6 @@ export function LogProviderTabContent() {
   };
 
   const handleDeleteConfirm = async () => {
-    const userEmail = getUserEmail();
-    if (!userEmail) {
-      setShowDeleteDialog(false);
-      return;
-    }
-
     try {
       setIsDeleting(true);
 
@@ -592,11 +576,10 @@ export function LogProviderTabContent() {
         return;
       }
 
-      // Delete from MongoDB
+      // Delete from MongoDB - API will get userEmail from Clerk auth
+      // Pass provider parameter to delete only this provider's config
       const response = await fetch(
-        `/api/provider-config?userEmail=${encodeURIComponent(
-          userEmail,
-        )}&providerType=log`,
+        `/api/provider-config?providerType=log&provider=${selectedProvider}`,
         {
           method: "DELETE",
         },
