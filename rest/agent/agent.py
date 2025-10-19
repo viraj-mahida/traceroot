@@ -3,6 +3,7 @@ import os
 from datetime import datetime, timezone
 
 from openai import AsyncOpenAI
+
 from rest.agent.chunk.semantic import semantic_chunk
 
 try:
