@@ -1,11 +1,11 @@
-import type { TraceRootConfigFile } from 'traceroot-sdk-ts/src/config';
+import type { TraceRootConfigFile } from 'traceroot-sdk-ts';
 
 const config: TraceRootConfigFile = {
   // The token for the TraceRoot API
   token: your_traceroot_token_here,
 
   // The name of the service you are tracing.
-  service_name: 'ts-example-service',
+  service_name: 'ts-example',
 
   // The owner of the GitHub repository
   github_owner: 'traceroot-ai',
